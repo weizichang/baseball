@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>球員列表</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    table#miyazaki { 
+      margin: 0 auto;
+      border-collapse: collapse;
+      font-family: Agenda-Light, sans-serif;
+      font-weight: 100; 
+      background: #333; color: #fff;
+      text-rendering: optimizeLegibility;
+      border-radius: 5px; 
+    }
+
+    table#miyazaki thead th { font-weight: 600; }
+    table#miyazaki thead th, table#miyazaki tbody td { 
+      padding: .8rem; font-size: 1.4rem;
+    }
+    table#miyazaki tbody td { 
+      padding: .8rem; font-size: 1.4rem;
+      color: #444; background: #eee; 
+    }
+    table#miyazaki tbody tr:not(:last-child) { 
+      border-top: 1px solid #ddd;
+      border-bottom: 1px solid #ddd;  
+    }
+    
+    @media screen and (max-width: 600px) {
+      
+      table#miyazaki thead { display: none; }
+      table#miyazaki tbody td { 
+        display: block; padding: .6rem; 
+      }
+      table#miyazaki tbody tr td:first-child { 
+        background: #666; color: #fff; 
+      }
+    	table#miyazaki tbody td:before { 
+        content: attr(data-th); 
+        font-weight: bold;
+        display: inline-block;
+        width: 6rem;  
+      }
+    }
+  </style>
+</head>
+<body>
+<table id="miyazaki">
+    
+    <thead>
+        <tr><th>Film<th>Year<th>Honor
+    </thead>
+    <tbody>
+        <tr>
+            <td>My Neighbor Totoro
+            <td>1988
+            <td>Blue Ribbon Award (Special)
+        <tr>
+            <td>Princess Mononoke
+            <td>1997
+            <td>Nebula Award (Best Script)
+        <tr>
+            <td>Spirited Away
+            <td>2001
+            <td>Academy Award (Best Animated Feature)
+        <tr>
+            <td>Howl’s Moving Castle
+            <td>2004
+            <td>Hollywood Film Festival (Animation OTY)
+        </tr>
+    </tbody>
+</table>
+<table>
+  <thead>
+    <tr>
+        <th>#</th>
+        <th>Date</th>
+        <th>Description</th>
+        <th>Credit</th>
+        <th>Debit</th>
+        <th>Balance</th>
+    </tr>
+</thead>
+  <tr data-toggle="collapse" data-target="#demo1" class="accordion-toggle">
+    <td>1</td>
+    <td>05 May 2013</td>
+    <td>Credit Account</td>
+    <td class="text-success">$150.00</td>
+    <td class="text-error"></td>
+    <td class="text-success">$150.00</td>
+</tr>
+
+<tr>
+    <td colspan="6" class="hiddenRow">
+        <div class="accordion-body collapse" id="demo1">Demo1</div>
+    </td>
+</tr>
+</table>
+
+
+<script>
+    var headertext = [],
+    headers = document.querySelectorAll("#miyazaki th");
+    console.log(headers);
+    tablerows = document.querySelectorAll("#miyazaki th");
+    console.log(tablerows);
+    tablebody = document.querySelector("#miyazaki tbody");
+    
+    for(var i = 0; i < headers.length; i++) {
+      var current = headers[i];
+      console.log(current);
+      headertext.push(current.textContent.replace(/\r?\n|\r/,""));
+    } 
+    for (var i = 0, row; row = tablebody.rows[i]; i++) {
+      for (var j = 0, col; col = row.cells[j]; j++) {
+        col.setAttribute("data-th", headertext[j]);
+      } 
+    }
+</script>
+</body>
+</html>
