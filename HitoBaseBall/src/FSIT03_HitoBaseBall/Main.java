@@ -15,6 +15,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 @WebServlet("/Main")
 public class Main extends HttpServlet {
@@ -23,13 +24,19 @@ public class Main extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
-		String strID = request.getParameter("teamID");
-		int teamID;
-		if(strID != null) {
-			teamID = Integer.parseInt(strID);
-		}else {
-			teamID = 1;
+		
+		HttpSession session = request.getSession();
+		
+		String teamID = (String)request.getParameter("teamID");
+		//int teamID;
+		if(teamID == null) {
+			teamID = (String)session.getAttribute("teamID");
+			if(teamID == null) {
+				teamID = "1";
+			}
 		}
+		session.setAttribute("teamID", teamID);
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Properties prop = new Properties();

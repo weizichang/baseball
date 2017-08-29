@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
   
 @WebServlet("/Players")
 public class Players extends HttpServlet {
@@ -21,7 +22,11 @@ public class Players extends HttpServlet {
 		response.setContentType("text/html; charset=UTF-8");
 		PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
-		String teamID = request.getParameter("teamID");
+		
+		HttpSession session = request.getSession();
+		
+		String teamID = (String)session.getAttribute("teamID");
+		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Properties prop = new Properties();

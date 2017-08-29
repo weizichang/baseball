@@ -40,42 +40,41 @@
 	    width: 1000px;
 	    margin: 0 auto;
 	    background-color: #FFF;
-		}
-		
-		.well {
-		  background-color:#F1F6F8;
-		  text-align:center;
-		}
-		
-		#myCarousel{
+	}
+	
+	.well {
+	  background-color:#F1F6F8;
+	  text-align:center;
+	}
+	
+	#myCarousel{
       margin-bottom: 10px;
     }
+
+	#player_img{
+	  /*position:relative;*/
+	  height:65px;
+	  width:55px;
+	}
 	
-		#player_img{
-		  /*position:relative;*/
-		  height:65px;
-		  width:55px;
-		}
-		
-		.table{
-		  background-color:#ACBDC5;
-		}
-		
-		.table > tbody > tr > td {
+	.table{
+	  background-color:#ACBDC5;
+	}
+	
+	.table > tbody > tr > td {
       vertical-align: middle;
     }
-    
-		
-		th{
-		  font-family: "Times New Roman", Times, serif;
-		  color:white;
-		  font-size: 20px;
-		  background-color:#314A52;
-		}
-		
-		th > span{
-		  font-size: 10px;
-		}
+	
+	th{
+	  font-family: "Times New Roman", Times, serif;
+	  color:white;
+	  font-size: 20px;
+	  background-color:#314A52;
+	}
+	
+	th > span{
+	  font-size: 10px;
+	}
 
     @media (max-width: 600px) {
       .carousel-caption {
@@ -101,7 +100,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="Main.html"><img src="imgs/icon_brothers_sub.png"></a>
+      <a href="Main"><img src="imgs/icon_brothers_sub.png"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">

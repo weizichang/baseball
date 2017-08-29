@@ -1,14 +1,14 @@
 package FSIT03_HitoBaseBall;
 
 public class Team {
-	private int teamID;
+	private String teamID;
 	private String name;
 	private String mail;
 	private String contact;
 	
 	public Team() {}
 	
-	public void setTeamId(int teamID) {
+	public void setTeamId(String teamID) {
 		this.teamID = teamID;
 	}
 	public void setName(String name) {
@@ -21,7 +21,7 @@ public class Team {
 		this.contact = contact;
 	}
 	
-	public int getTeamId() {
+	public String getTeamId() {
 		return teamID;
 	}
 	

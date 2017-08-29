@@ -159,7 +159,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="Main.html"><img src="imgs/icon_brothers_sub.png"></a>
+      <a href="Main"><img src="imgs/icon_brothers_sub.png"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
