@@ -20,15 +20,16 @@ public class PlayerDetail extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		HttpSession session = request.getSession();
 		String playerID = request.getParameter("playerID");
-		Player player = new Player();
+		PlayerModel player = new PlayerModel();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Properties prop = new Properties();
 			prop.setProperty("user", "root");
 			prop.setProperty("password", "root");
+			prop.setProperty("useSSL", "false");
+			//prop.setProperty("autoReconnect", "true");
 			
-			Connection conn = DriverManager.getConnection(
-				"jdbc:mysql://127.0.0.1/cpbl", prop);
+			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/cpbl", prop);
 			
 			Statement stmt = conn.createStatement();
 			String sql ="SELECT *, t.name as teamname " + 

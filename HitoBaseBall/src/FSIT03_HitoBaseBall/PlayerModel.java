@@ -1,6 +1,6 @@
 package FSIT03_HitoBaseBall;
 
-public class Player {
+public class PlayerModel {
 	private String playerID;
 	private String number;
 	private String name;
@@ -12,7 +12,7 @@ public class Player {
 	private String teamID;
 	private String teamname;
 	
-	public Player() {}
+	public PlayerModel() {}
 	
 	public void setPlayerId(String playerID) {
 		this.playerID = playerID;

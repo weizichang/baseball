@@ -42,9 +42,10 @@ public class Main extends HttpServlet {
 			Properties prop = new Properties();
 			prop.setProperty("user", "root");
 			prop.setProperty("password", "root");
+			prop.setProperty("useSSL", "false");
+			//prop.setProperty("autoReconnect", "true");
 			
-			Connection conn = DriverManager.getConnection(
-				"jdbc:mysql://127.0.0.1/cpbl", prop);
+			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/cpbl", prop);
 			
 			Statement stmt = conn.createStatement();
 			String sql ="select * from teams where teamID=" + teamID;

@@ -106,7 +106,7 @@
       <ul class="nav navbar-nav">
         <li class="active"><a href="Main">球隊主頁</a></li>
         <li><a href="Players?teamID=<%= team.getTeamId()%>">球員列表</a></li>
-        <li><a href="Schedule.html">賽程</a></li>
+        <li><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>
       <!--<ul class="nav navbar-nav navbar-right">-->

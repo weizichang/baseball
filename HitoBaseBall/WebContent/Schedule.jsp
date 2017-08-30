@@ -1,5 +1,21 @@
-<!DOCTYPE html>
-<html lang="en">
+<%@page import="java.util.ArrayList"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+ <%@ page import="FSIT03_HitoBaseBall.*" %>
+ <%
+ 	ArrayList<ScoreBoardModel> boards = 
+ 			(ArrayList<ScoreBoardModel>)request.getAttribute("boards");  
+ 	/*
+ 	if(board != null){
+ 		out.print("ok");
+ 	}else{
+ 		out.print("xX");
+ 	}
+ 	*/
+ 
+ %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
   <title>賽程</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -53,13 +69,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="Main.html"><img src="imgs/icon_brothers_sub.png"></a>
+      <a href="Main"><img src="imgs/icon_brothers_sub.png"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a href="Main.html">球隊主頁</a></li>
-        <li><a href="Players.html">球員列表</a></li>
-        <li class="active"><a href="Schedule.html">賽程</a></li>
+        <li><a href="Main">球隊主頁</a></li>
+        <li><a href="Players">球員列表</a></li>
+        <li class="active"><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>
       <!--<ul class="nav navbar-nav navbar-right">-->
@@ -70,19 +86,22 @@
 </nav>
 
 <div class="container">
-<div class="panel-group" id="accordion">
+	<div class="panel-group" id="accordion">
+<% 
+	for(int i = 0; i < boards.size(); i++){%>
     <div class="panel panel-default">
       <div class="panel-heading">
         <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
-            2017/08/01  中信兄弟 V.S. 統一7-ELEVEn 
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i+1 %>">
+            <%= boards.get(i).getDate() %>  <%= boards.get(i).getAwayTeam() %> V.S. <%= boards.get(i).getHomeTeam() %> 
             <a href="BoxScore.html">
               <span class="glyphicon glyphicon-info-sign" style="float:right"></span>
             </a>
           </a>
         </h4>
       </div>
-      <div id="collapse1" class="panel-collapse collapse">
+     <!--  -->
+      <div id="collapse<%= i+1 %>" class="panel-collapse collapse">
         <div class="panel-body">
           <div class="score_board">
   					<!-- 球隊 start -->
@@ -92,10 +111,10 @@
   								<th>&nbsp;</th>
   							</tr>
   							<tr>
-  								<td align="left" class="team">兄弟</td>
+  								<td align="left" class="team"><%= boards.get(i).getAwayTeam() %></td>
   							</tr>
   							<tr>
-  								<td align="left" class="team">統一</td>
+  								<td align="left" class="team"><%= boards.get(i).getHomeTeam() %></td>
   							</tr>
   						</table>
   					</div>
@@ -105,45 +124,25 @@
   					<div class="score_board_main">
   						<table border="0" cellspacing="0" cellpadding="0" class="score_table" id="game_score_board"  align="center">
   							<tr>
-  								<th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th>
+	  							<%
+	  								for(int j =0; j < boards.get(i).getAwayInningScore().size(); j++){%>
+			  								<th><%= j + 1 %></th>
+	  								<%}
+	  							%>
   							</tr>
   							<tr>
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>1</span></td>
-  				
-  								<td align="center"><span>2</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>0</span></td>
+	  							<%
+	  								for(int j =0; j < boards.get(i).getAwayInningScore().size(); j++){%>
+			  								<td align="center"><span><%= boards.get(i).getAwayInningScore().get(j) %></span></td>
+	  								<%}
+	  							%>
   							</tr>
   							<tr>
-  								<td align="center"><span>3</span></td>
-  				
-  								<td align="center"><span>1</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>1</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>2</span></td>
-  				
-  								<td align="center"><span>0</span></td>
-  				
-  								<td align="center"><span>X</span></td>
+	  							<%
+	  								for(int j =0; j < boards.get(i).getHomeInningScore().size(); j++){%>
+			  								<td align="center"><span><%= boards.get(i).getHomeInningScore().get(j) %></span></td>
+	  								<%}
+	  							%>
   							</tr>
   						</table>
   					</div>
@@ -158,14 +157,18 @@
   								<th >E</th>
   							</tr>
   							<tr>
-  								<td align="center">3</td>
-  								<td align="center">8</td>
-  								<td align="center">1</td>
+	  							<%
+	  								for(int j =0; j < boards.get(i).getAwayRHE().length; j++){%>
+			  								<td align="center"><%= boards.get(i).getAwayRHE()[j] %></td>
+	  								<%}
+	  							%>
   							</tr>
   							<tr>
-  								<td align="center">7</td>
-  								<td align="center">8</td>
-  								<td align="center">1</td>
+	  							<%
+	  								for(int j =0; j < boards.get(i).getHomeRHE().length; j++){%>
+			  								<td align="center"><%= boards.get(i).getHomeRHE()[j] %></td>
+	  								<%}
+	  							%>
   							</tr>
   						</table>
   					</div>
@@ -175,36 +178,13 @@
   				<!-- score_board --> 
 				  <!-- 局數分數板 end --> 
 			</div>
-          
         </div>
       </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse2">2017/08/03</a>
-        </h4>
-      </div>
-      <div id="collapse2" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
-    </div>
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <h4 class="panel-title">
-          <a data-toggle="collapse" data-parent="#accordion" href="#collapse3">Collapsible Group 3</a>
-        </h4>
-      </div>
-      <div id="collapse3" class="panel-collapse collapse">
-        <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</div>
-      </div>
-    </div>
-  </div>
-
+     <!--  -->
+	<%}
+%>
+	</div>
+</div>
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
 </footer>

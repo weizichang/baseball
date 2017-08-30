@@ -32,18 +32,19 @@ public class Players extends HttpServlet {
 			Properties prop = new Properties();
 			prop.setProperty("user", "root");
 			prop.setProperty("password", "root");
+			prop.setProperty("useSSL", "false");
+			//prop.setProperty("autoReconnect", "true");
 			
-			Connection conn = DriverManager.getConnection(
-				"jdbc:mysql://127.0.0.1/cpbl", prop);
+			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/cpbl", prop);
 			
 			Statement stmt = conn.createStatement();
 			//投手
 			String sql ="SELECT * FROM players as p WHERE p.teamID="+teamID+" and p.pos='投手'  "
 					+ "ORDER BY number ASC";
 			ResultSet rs =  stmt.executeQuery(sql);
-			ArrayList<Player> pitchers = new ArrayList<>();
+			ArrayList<PlayerModel> pitchers = new ArrayList<>();
 			while(rs.next()) {
-				Player player = new Player();
+				PlayerModel player = new PlayerModel();
 				player.setPlayerId(rs.getString("playerID"));
 				player.setNumber(rs.getString("number"));
 				player.setName(rs.getString("name"));
@@ -60,9 +61,9 @@ public class Players extends HttpServlet {
 			sql ="SELECT * FROM players as p WHERE p.teamID="+teamID+" and p.pos='捕手'  "
 					+ "ORDER BY number ASC";
 			rs =  stmt.executeQuery(sql);
-			ArrayList<Player> catchers = new ArrayList<>();
+			ArrayList<PlayerModel> catchers = new ArrayList<>();
 			while(rs.next()) {
-				Player player = new Player();
+				PlayerModel player = new PlayerModel();
 				player.setPlayerId(rs.getString("playerID"));
 				player.setNumber(rs.getString("number"));
 				player.setName(rs.getString("name"));
@@ -80,9 +81,9 @@ public class Players extends HttpServlet {
 					"	WHERE p.pos in ('一壘手','二壘手','三壘手','游擊手') AND p.teamID="+teamID+" " + 
 					"    ORDER BY number ASC";
 			rs =  stmt.executeQuery(sql);
-			ArrayList<Player> infielders = new ArrayList<>();
+			ArrayList<PlayerModel> infielders = new ArrayList<>();
 			while(rs.next()) {
-				Player player = new Player();
+				PlayerModel player = new PlayerModel();
 				player.setPlayerId(rs.getString("playerID"));
 				player.setNumber(rs.getString("number"));
 				player.setName(rs.getString("name"));
@@ -100,9 +101,9 @@ public class Players extends HttpServlet {
 					"	WHERE pos in ('左外野手','中外野手','右外野手') AND p.teamID="+teamID+"" + 
 					"    ORDER BY number ASC";
 			rs =  stmt.executeQuery(sql);
-			ArrayList<Player> outfielders = new ArrayList<>();
+			ArrayList<PlayerModel> outfielders = new ArrayList<>();
 			while(rs.next()) {
-				Player player = new Player();
+				PlayerModel player = new PlayerModel();
 				player.setPlayerId(rs.getString("playerID"));
 				player.setNumber(rs.getString("number"));
 				player.setName(rs.getString("name"));

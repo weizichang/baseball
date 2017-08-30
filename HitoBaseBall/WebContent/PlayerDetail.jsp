@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-		Player player = (Player)request.getAttribute("player");
+		PlayerModel player = (PlayerModel)request.getAttribute("player");
 		//out.print(player.getName());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -165,7 +165,7 @@
       <ul class="nav navbar-nav">
         <li><a href="Main">球隊主頁</a></li>
         <li class="active"><a href="Players">球員列表</a></li>
-        <li><a href="Schedule.html">賽程</a></li>
+        <li><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>
       <!--<ul class="nav navbar-nav navbar-right">-->

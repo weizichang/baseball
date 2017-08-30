@@ -25,6 +25,7 @@ public class PlayByPlay extends HttpServlet {
 			Properties prop = new Properties();
 			prop.setProperty("user", "root");
 			prop.setProperty("password", "root");
+			prop.setProperty("useSSL", "false");
 			
 			Connection conn = DriverManager.getConnection(
 				"jdbc:mysql://127.0.0.1/cpbl", prop);
@@ -34,6 +35,20 @@ public class PlayByPlay extends HttpServlet {
 			ResultSet rs =  stmt.executeQuery(sql);
 			while(rs.next()) {
 				out.print(rs.getString("playerID")+":");
+				/*
+				 * AwayTeam
+				 * SELECT name, sum(ab), sum(h) ,sum(1b) ,sum(2b) ,sum(3b) ,sum(hr) ,sum(bb) ,sum(so)    
+					FROM players as p, game_detail as g
+    				WHERE p.playerID = g.playerID AND p.teamID = 1
+    				GROUP BY name
+    				
+    				HomeTeam
+				 * SELECT name, sum(ab), sum(h) ,sum(1b) ,sum(2b) ,sum(3b) ,sum(hr) ,sum(bb) ,sum(so)    
+					FROM players as p, game_detail as g
+    				WHERE p.playerID = g.playerID AND p.teamID = 2
+    				GROUP BY name
+				 */
+				
 			}
 		}catch(Exception e) {System.out.println(e.toString());}
 	}

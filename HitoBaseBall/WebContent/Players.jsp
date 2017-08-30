@@ -3,10 +3,10 @@
     pageEncoding="UTF-8"%>
  <%@ page import="FSIT03_HitoBaseBall.*" %>
  <%
-	ArrayList<Player> pitchers = (ArrayList<Player>)request.getAttribute("pitchers");
-	ArrayList<Player> catchers = (ArrayList<Player>)request.getAttribute("catchers");
-	ArrayList<Player> infielders = (ArrayList<Player>)request.getAttribute("infielders");
-	ArrayList<Player> outfielders = (ArrayList<Player>)request.getAttribute("outfielders");
+	ArrayList<PlayerModel> pitchers = (ArrayList<PlayerModel>)request.getAttribute("pitchers");
+	ArrayList<PlayerModel> catchers = (ArrayList<PlayerModel>)request.getAttribute("catchers");
+	ArrayList<PlayerModel> infielders = (ArrayList<PlayerModel>)request.getAttribute("infielders");
+	ArrayList<PlayerModel> outfielders = (ArrayList<PlayerModel>)request.getAttribute("outfielders");
  	if(catchers != null) {
  		//out.print("ok");
  	}else{
@@ -89,7 +89,7 @@
       <ul class="nav navbar-nav">
         <li><a href="Main">球隊主頁</a></li>
         <li class="active"><a href="Players">球員列表</a></li>
-        <li><a href="Schedule.html">賽程</a></li>
+        <li><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>
       <!--<ul class="nav navbar-nav navbar-right">-->
