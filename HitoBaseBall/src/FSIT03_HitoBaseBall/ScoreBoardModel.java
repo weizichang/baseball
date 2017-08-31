@@ -3,10 +3,13 @@ package FSIT03_HitoBaseBall;
 import java.util.ArrayList;
 
 public class ScoreBoardModel {
-	private String homeTeam, awayTeam, date;
+	private String iid,homeTeam, awayTeam, date;
 	private ArrayList<String> homeInningScore, awayInningScore;
 	private String[] homeRHE, awayRHE;
 	
+	public void setIid(String name) {
+		this.iid = name;
+	}
 	public void setHomeTeam(String name) {
 		this.homeTeam = name;
 	}
@@ -29,6 +32,7 @@ public class ScoreBoardModel {
 		this.awayRHE = str;
 	}
 	
+	public String getIid() {return iid;}
 	public String getHomeTeam () {return homeTeam;}
 	public String getAwayTeam () {return awayTeam;}
 	public String getDate () {return date;}

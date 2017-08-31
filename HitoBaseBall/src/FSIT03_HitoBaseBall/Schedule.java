@@ -28,6 +28,7 @@ public class Schedule extends HttpServlet {
 		}
 		ArrayList<ScoreBoardModel> boards = setBoard(teamID);
 		request.setAttribute("boards", boards);
+		session.setAttribute("boards", boards);
 		request.getRequestDispatcher("Schedule.jsp").forward(request, response);
 	}
 	private ArrayList setBoard(String teamID) {
@@ -58,11 +59,14 @@ public class Schedule extends HttpServlet {
 			//根據 iid loop
 			for(int i = 0; i < iid.size(); i ++) {
 				ScoreBoardModel board = new ScoreBoardModel();
+				// iid
+				board.setIid(iid.get(i));
+				
 				sql ="SELECT date," + 
 						"(SELECT name FROM teams, game_info WHERE teams.teamID = game_info.home_teamID GROUP BY name) as home_team," + 
 						"(SELECT name FROM teams, game_info WHERE teams.teamID = game_info.away_teamID GROUP BY name) as away_team" + 
 						"	FROM game_info as g" + 
-						"	where home_teamID=1 or away_teamID=1 AND iid="+iid.get(i)+"";
+						"	where home_teamID="+teamID+" or away_teamID="+teamID+" AND iid="+iid.get(i)+"";
 				rs =  stmt.executeQuery(sql);
 				if(rs.next()) {				
 					board.setHomeTeam(rs.getString("home_team"));

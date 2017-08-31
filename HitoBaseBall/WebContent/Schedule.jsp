@@ -94,7 +94,7 @@
         <h4 class="panel-title">
           <a data-toggle="collapse" data-parent="#accordion" href="#collapse<%= i+1 %>">
             <%= boards.get(i).getDate() %>  <%= boards.get(i).getAwayTeam() %> V.S. <%= boards.get(i).getHomeTeam() %> 
-            <a href="BoxScore.html">
+            <a href="BoxScore?iid=<%= boards.get(i).getIid() %>">
               <span class="glyphicon glyphicon-info-sign" style="float:right"></span>
             </a>
           </a>
