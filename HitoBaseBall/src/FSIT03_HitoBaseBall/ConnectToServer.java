@@ -21,16 +21,17 @@ import com.google.gson.Gson;
 
 @WebServlet("/ConnectToServer")
 public class ConnectToServer extends HttpServlet {
-	String team;
+	String home, opp;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		//PrintWriter out = response.getWriter();
 		request.setCharacterEncoding("UTF-8");
 		
 		String option = request.getParameter("option");
-		team = request.getParameter("team");
+		home = request.getParameter("home");
+		opp = request.getParameter("opp");
 		if(option != null) {
-			System.out.println(option + team);
+			System.out.println(option + ":"+home+":"+opp);
 			OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream());
 			Gson gson = new Gson();
 			String json = gson.toJson(getData(option));
@@ -69,7 +70,7 @@ public class ConnectToServer extends HttpServlet {
 				case "1"://players
 					sql ="SELECT p.name " + 
 							"	FROM players as p , teams as t" + 
-							"    WHERE p.teamID = t.teamID AND t.name = '"+team+"'";
+							"    WHERE p.teamID = t.teamID AND t.name = '"+home+"'";
 					rs =  stmt.executeQuery(sql);
 					while(rs.next()) {
 						String[] tmp = rs.getString("name").split(" ");
