@@ -1,8 +1,10 @@
 package FSIT03_HitoBaseBall;
 
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.io.OutputStreamWriter;
 import java.io.PrintWriter;
+import java.net.HttpURLConnection;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -21,7 +23,8 @@ import com.google.gson.Gson;
 
 @WebServlet("/ConnectToServer")
 public class ConnectToServer extends HttpServlet {
-	String home, opp;
+	private String home, opp;
+	private Gson gson;
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html; charset=UTF-8");
 		//PrintWriter out = response.getWriter();
@@ -32,10 +35,12 @@ public class ConnectToServer extends HttpServlet {
 		opp = request.getParameter("opp");
 		if(option != null) {
 			System.out.println(option + ":"+home+":"+opp);
-			OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream());
-			Gson gson = new Gson();
-			String json = gson.toJson(getData(option));
-            writer.write(json);
+			//OutputStreamWriter writer = new OutputStreamWriter(response.getOutputStream());
+			ObjectOutputStream writer = new ObjectOutputStream(response.getOutputStream());
+			gson = new Gson();
+			//String json = gson.toJson(getData(option));
+            //writer.write(json);
+			writer.writeObject(getData(option));
             writer.flush();
             writer.close();
 			
@@ -47,6 +52,7 @@ public class ConnectToServer extends HttpServlet {
 	private Object getData(String option){
 		ResultSet rs;
 		StringBuilder sb = new StringBuilder();
+		Object obj = new Object();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Properties prop = new Properties();
@@ -63,28 +69,51 @@ public class ConnectToServer extends HttpServlet {
 				case "0"://teams
 					sql ="select * from teams";
 					rs =  stmt.executeQuery(sql);
+					ArrayList<String> teams = new ArrayList<>();
 					while(rs.next()) {
-						sb.append(rs.getString("name")+" ");
+						//sb.append(rs.getString("name")+" ");
+						teams.add(rs.getString("name"));
 					}
+					obj = gson.toJson(teams);
+					System.out.println(obj);
+					//sb.append(", ");
 					break;
+					
 				case "1"://players
+					// home team JSONObject
 					sql ="SELECT p.name " + 
 							"	FROM players as p , teams as t" + 
 							"    WHERE p.teamID = t.teamID AND t.name = '"+home+"'";
 					rs =  stmt.executeQuery(sql);
+					ArrayList<String> players = new ArrayList<>();
+					while(rs.next()) {
+//						String[] tmp = rs.getString("name").split(" ");
+//						for(int i = 0; i < tmp.length; i ++) {
+//							sb.append(tmp[i]);
+//						}sb.append(", ");
+//						sb.append(" ");
+						players.add(rs.getString("name"));
+					}
+					obj = gson.toJson(players);
+					
+					// away team JSONObject
+					sql ="SELECT p.name " + 
+							"	FROM players as p , teams as t" + 
+							"    WHERE p.teamID = t.teamID AND t.name = '"+opp+"'";
+					rs =  stmt.executeQuery(sql);
+					sb.append("{\"home\":");
 					while(rs.next()) {
 						String[] tmp = rs.getString("name").split(" ");
 						for(int i = 0; i < tmp.length; i ++) {
 							sb.append(tmp[i]);
 						}
-						sb.append(" ");
+						sb = (rs.next())?sb.append(", "):sb.append(" ");
 					}
 					System.out.println(sb);
 					break;
 			}
-			
 			conn.close();
 		}catch (Exception e) {System.out.println(e.toString());}
-		return sb.toString().split(" ");
+		return obj;
 	}
 }
