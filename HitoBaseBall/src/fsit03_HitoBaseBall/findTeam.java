@@ -55,11 +55,11 @@ public class findTeam extends HttpServlet {
 				sb.append("<team>");
 
 				sb.append("<teamID>");
-				sb.append(rs.getString("teamID"));
+				sb.append(rs.getString("teamId"));
 				sb.append("</teamID>");				
 				
 				sb.append("<name>");
-				sb.append(rs.getString("name"));
+				sb.append(rs.getString("teamname"));
 				sb.append("</name>");
 				
 				sb.append("<contact>");

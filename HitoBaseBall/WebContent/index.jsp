@@ -347,14 +347,14 @@
 			<section id="content">		
 				<span class="w3-button w3-display-topright w3-large" 
 		        onclick="document.getElementById('LoginModal').style.display='none'">&times;</span>	
-				<form action="">
+				<form action="Logging">
 					<h1>歡迎登入</h1>
 					<div>
-						<input type="email" placeholder="電子信箱" required=""  
+						<input type="email" name='mail' placeholder="電子信箱" required=""  
 						id="LoginAcc"/>
 					</div>
 					<div>
-						<input type="password" placeholder="登入密碼" required="" 
+						<input type="password" name='password' placeholder="登入密碼" required="" 
 						id="LoginPass" />
 					</div>					
 					<div>
@@ -464,7 +464,7 @@
 			//Find existing Team list via AJAX(only execute once)
 			findTeamStatic();
 			function findTeamStatic(){
-				xmlhttp.open("GET", "http://localhost:8080/FSIT03_BASEBALL/findTeam", true);
+				xmlhttp.open("GET", "http://localhost:8080/HitoBaseBall/findTeam", true);
 	        	xmlhttp.onreadystatechange = function () {
 	        		if(xmlhttp.readyState == 4  && xmlhttp.status == 200){	        			
 	        			var xml = xmlhttp.responseXML;
@@ -505,7 +505,7 @@
 
 			//Find new Team list via AJAX(dynamic execute)
 			function findTeamDynam(){
-				xmlhttp.open("GET", "http://localhost:8080/FSIT03_BASEBALL/findTeam", true);
+				xmlhttp.open("GET", "http://localhost:8080/HitoBaseBall/findTeam", true);
 	        	xmlhttp.onreadystatechange = function () {
 	        		if(xmlhttp.readyState == 4  && xmlhttp.status == 200){	        			
 	        			var xml = xmlhttp.responseXML;
