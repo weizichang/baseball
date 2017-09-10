@@ -1,7 +1,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
- <%@ page import="FSIT03_HitoBaseBall.*" %>
+ <%@ page import="fsit03_HitoBaseBall.*" %>
  <%
  	ArrayList<ScoreBoardModel> boards = 
  			(ArrayList<ScoreBoardModel>)request.getAttribute("boards");  
@@ -27,6 +27,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Hide the carousel text when the screen is less than 600 pixels wide */
+    body {
+		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+	}
+    
     @media (max-width: 920px) {
       .gap_l20 {
         width:40px;
@@ -69,12 +73,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="Main"><img src="imgs/icon_brothers_sub.png"></a>
+      <a href="Main"><img src="./upload/img/A21.png" style="width:70px;height:70px;"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="Main">球隊主頁</a></li>
-        <li><a href="Players">球員列表</a></li>
+        <li><a href="ShowPlayer">球員列表</a></li>
         <li class="active"><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>

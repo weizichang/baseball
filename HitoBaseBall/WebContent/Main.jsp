@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ page import="FSIT03_HitoBaseBall.*" %>
+<%@ page import="fsit03_HitoBaseBall.*" %>
 <%
 	Team team = (Team)request.getAttribute("team");
 	Top3 top3 = (Top3)request.getAttribute("top3");
@@ -22,6 +22,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Add a gray background color and some padding to the footer */
+    body {
+			font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+		}
+    
     footer {
       background-color: #f2f2f2;
       padding: 25px;
@@ -35,6 +39,7 @@
       width: 100%; /* Set width to 100% */
       /*min-height: 200px;*/
     }
+    
     
     .content {
 	    width: 1000px;
@@ -51,25 +56,26 @@
       margin-bottom: 10px;
     }
 
-	#player_img{
-	  /*position:relative;*/
-	  height:65px;
-	  width:55px;
+	
+	.player_img{
+		border-radius:100%;
+	  	width:70px;
 	}
 	
 	.table{
-	  background-color:#ACBDC5;
+	  background-color:#BDF1F6;
 	}
 	
 	.table > tbody > tr > td {
       vertical-align: middle;
+      font-size:18px;
     }
-	
+    
+   
 	th{
-	  font-family: "Times New Roman", Times, serif;
 	  color:white;
 	  font-size: 20px;
-	  background-color:#314A52;
+	  background-color:#0245A3;
 	}
 	
 	th > span{
@@ -100,12 +106,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="Main"><img src="imgs/icon_brothers_sub.png"></a>
+      <a href="Main"><img src="./upload/img/A21.png" style="width:70px;height:70px;"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li class="active"><a href="Main">球隊主頁</a></li>
-        <li><a href="Players?teamID=<%= team.getTeamId()%>">球員列表</a></li>
+        <li><a href="ShowPlayer?teamID=<%= team.getTeamId()%>">球員列表</a></li>
         <li><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>
@@ -136,8 +142,7 @@
         <div class="item active">
           <img class="img-responsive" style="width:100%" src="imgs/slide01.jpg" alt="Image">
           <div class="carousel-caption">
-            <!--<h3>Sell $</h3>-->
-            <!--<p>Money Money.</p>-->
+          
           </div>      
         </div>
         
@@ -155,17 +160,7 @@
             <!--<h3>Sell $</h3>-->
             <!--<p>Money Money.</p>-->
           </div>      
-        </div>
-        
-        <!--<div class="item">-->
-        <!--  <img src="imgs/slide04.jpg" alt="Image">-->
-        <!--  <div class="carousel-caption">-->
-            <!--<h3>Sell $</h3>-->
-            <!--<p>Money Money.</p>-->
-        <!--  </div>      -->
-        <!--</div>-->
-
-        
+        </div>  
       </div>
 
       <!-- Left and right controls -->
@@ -181,14 +176,10 @@
   <!--</div>-->
   <div class="row">
     <div class="col-sm-1"></div>
-    <div class="col-sm-4 well">
-      <a><%= team.getName() %></a>
-      
+    <div class="col-sm-5 well">
+       <a href="https://www.facebook.com/Brotherelephants" target="_blank"><%= team.getName() %></a>
     </div>
-    <div class="col-sm-3 well">
-       <a href="https://www.facebook.com/Brotherelephants" target="_blank">球隊粉絲團</a>
-    </div>
-    <div class=" col-sm-3 well">
+    <div class=" col-sm-5 well">
        <a href="mailto:<%= team.getMail() %>">聯絡信箱</a>
     </div>
     <div class="col-sm-1"></div>
@@ -209,14 +200,14 @@
                 <%
                 	for(int i = 0; i < 3; i++){ %>
                 		<tr>
-	                        <td width="50"><%= i + 1 %></td>
-	                        <td>
+	                        <td class='td_text' width="50"><%= i + 1 %></td>
+	                        <td class='td_text'>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getAvg().get(i).get("playerID") %>">
-	                        		<img id="player_img" src="imgs/H929.jpg"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getAvg().get(i).get("playerID") %>.png"></img>
 	                        	</a>
 	                        </td>
-	                        <td width="100"><%= top3.getAvg().get(i).get("name") %></td></td>
-	                        <td width="80"><%= top3.getAvg().get(i).get("AVG") %></td>
+	                        <td class='td_text' width="100"><%= top3.getAvg().get(i).get("name") %></td></td>
+	                        <td class='td_text' width="80"><%= top3.getAvg().get(i).get("AVG") %></td>
 	                    </tr>			
                 	<%}
               	%>    
@@ -235,8 +226,9 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getHits().get(i).get("playerID") %>">
-                        			<img id="player_img" src="imgs/H929.jpg"></img>
-	                        	</a></td>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getHits().get(i).get("playerID") %>.png"></img>
+	                        	</a>
+	                        </td>
 	                        <td width="100"><%= top3.getHits().get(i).get("name") %></td></td>
 	                        <td width="80"><%= top3.getHits().get(i).get("hits") %></td>
 	                    </tr>			
@@ -257,7 +249,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getRbi().get(i).get("playerID") %>">
-	                        		<img id="player_img" src="imgs/H929.jpg"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getRbi().get(i).get("playerID") %>.png"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getRbi().get(i).get("name") %></td></td>
@@ -283,7 +275,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getEra().get(i).get("playerID") %>">
-	                        		<img id="player_img" src="imgs/H929.jpg"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getEra().get(i).get("playerID") %>.png"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getEra().get(i).get("name") %></td></td>
@@ -306,7 +298,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getSo().get(i).get("playerID") %>">
-	                        		<img id="player_img" src="imgs/H929.jpg"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getSo().get(i).get("playerID") %>.png"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getSo().get(i).get("name") %></td></td>
@@ -328,8 +320,8 @@
                 		<tr>
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
-	                        	<a href="PlayerDetail?playerID=<%= top3.getAvg().get(i).get("playerID") %>">
-	                        		<img id="player_img" src="imgs/H929.jpg"></img>
+	                        	<a href="PlayerDetail?playerID=<%= top3.getWhip().get(i).get("playerID") %>">
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getWhip().get(i).get("playerID") %>.png"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getWhip().get(i).get("name") %></td></td>
@@ -348,7 +340,10 @@
   <p>Footer Text</p>
 </footer>
 <script>
-  var img = document.getElementById('')
+var myFunction = function (e) {
+	this.onerror=null;
+	e.src = "./upload/img/playerhead.png"
+}
 </script>
 </body>
 </html>

@@ -363,6 +363,9 @@ th {
     display: none;
   }
   
+  .std_tb mix_x{
+  	background-color:#0245A3;
+  }
   .std_tb tr th, .std_tb tr th{
     font-size: 14px;
   }

@@ -1,8 +1,8 @@
-<%@ page import="FSIT03_HitoBaseBall.*" %>
+<%@ page import="fsit03_HitoBaseBall.*" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%
-		PlayerModel player = (PlayerModel)request.getAttribute("player");
+	MyPlayerModel player = (MyPlayerModel)request.getAttribute("player");
 		//out.print(player.getName());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -17,6 +17,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Add a gray background color and some padding to the footer */
+    body {
+		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+	}
+    
     footer {
       background-color: #f2f2f2;
       padding: 25px;
@@ -159,12 +163,12 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a href="Main"><img src="imgs/icon_brothers_sub.png"></a>
+      <a href="Main"><img src="./upload/img/A21.png" style="width:70px;height:70px;"></a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
         <li><a href="Main">球隊主頁</a></li>
-        <li class="active"><a href="Players">球員列表</a></li>
+        <li class="active"><a href="ShowPlayer">球員列表</a></li>
         <li><a href="Schedule">賽程</a></li>
         <!--<li><a href="#">Contact</a></li>-->
       </ul>
@@ -182,7 +186,7 @@
 <!---->
 <div class="player_info">
   <div class="player_info_pic">
-    <img width="180" height="240" src="imgs/H929.jpg"></img>
+  	<img width="120" height="160" class='player_img' onerror="myFunction(this)" src="./upload/img/player_<%= player.getPlayerId() %>.png"></img>
   </div>
   <div class="player_info_row1">
     <div class="player_num">
@@ -539,6 +543,11 @@ for(var k = 0; k < tables.length; k++){
       //console.log(col);
     } 
   }
+}
+
+var myFunction = function (e) {
+	this.onerror=null;
+	e.src = "./upload/img/playerhead.png"
 }
 </script>
 </body>
