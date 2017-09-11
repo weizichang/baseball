@@ -59,16 +59,17 @@ public class ShowPlayers extends HttpServlet {
 			prop.setProperty("password", "root");
 			
 			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hitobaseball", prop);
-			System.out.println("showerplayers:連線OK");
 			
 			Statement stmt = conn.createStatement();
 			String sql ="select * from players where temid=" + teamId;
 			ResultSet rs =  stmt.executeQuery(sql);
 			
-			PlayerModel player = new PlayerModel();
 			
-			if(rs.next()) {
+			
+			while(rs.next()) {
+				PlayerModel player = new PlayerModel();
 				player.setTemid(teamId);
+				player.setPlayerId(rs.getString("playerId"));
 				player.setNumber(rs.getString("number"));
 				player.setName(rs.getString("name"));
 				player.setPosition(rs.getString("position"));
@@ -78,8 +79,19 @@ public class ShowPlayers extends HttpServlet {
 				player.setWeight(rs.getString("weight"));
 				player.setBirthday(rs.getString("birthday"));
 				
+				//TODO 照片名稱格式化
+//				String uploadPath = 
+//						getServletContext().getInitParameter("upload-path");
+//				String srcFilename = uploadPath+teamId+"_"+player.getNumber()+".PNG";
+//				if(srcFilename != null) {
+//					String destFilename = uploadPath+"plarer"+player.getPlayerId()+".PNG"; 
+//			  		boolean filechange = FileReName.rename(srcFilename, destFilename);
+//				}
+		  		
+				
 				temp.add(player);
 			}
+			System.out.println("size:"+temp.size());
 			session.setAttribute("sqlplayers", temp);
 		}catch (Exception e) {
 			System.out.println(e.toString());

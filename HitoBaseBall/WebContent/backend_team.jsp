@@ -34,10 +34,54 @@ TeamModel team =(TeamModel) request.getAttribute("team");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
 </head>
 
 
 <body>
+
+<form>
+    <input type='file' class="upl">
+    <div>
+        <img class="preview" style="max-width: 150px; max-height: 150px;">
+        <div class="size"></div>
+    </div>
+</form>
+
+<script>
+$(function (){
+	 
+    function format_float(num, pos)
+    {
+        var size = Math.pow(10, pos);
+        return Math.round(num * size) / size;
+    }
+ 
+    function preview(input) {
+ 
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+            
+            reader.onload = function (e) {
+                $('.preview').attr('src', e.target.result);
+                var KB = format_float(e.total / 1024, 2);
+                $('.size').text("檔案大小：" + KB + " KB");
+            }
+ 
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
+ 
+    $("body").on("change", ".upl", function (){
+        preview(this);
+    })
+    
+})
+
+
+
+</script>
+
    <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       
@@ -91,7 +135,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 <div class="collapse navbar-collapse" id="listbar">
     <ul class="nav navbar-nav">
         <li class="active"><a href="MyTeam" >編輯球隊資料</a></li>
-        <li><a lass="nav-link" href="backend_players.jsp">編輯球員資料</a></li>
+        <li><a lass="nav-link" href="ShowPlayers">編輯球員資料</a></li>
         <li><a lass="nav-link" href="">賽程查詢/預排</a></li>
         <li><a lass="nav-link" href="">紀錄查詢/修改</a></li>
         <li><a lass="nav-link" href="">Preview</a></li>

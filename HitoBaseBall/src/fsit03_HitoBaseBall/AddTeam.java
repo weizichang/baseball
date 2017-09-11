@@ -53,7 +53,7 @@ public class AddTeam extends HttpServlet {
 			request.setAttribute("error", e);
 			System.out.println(e.toString());
 			request.getRequestDispatcher("backend.jsp").forward(request, response);
-		
+			
 		}
 	}
 

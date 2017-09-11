@@ -11,6 +11,7 @@ import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.concurrent.SynchronousQueue;
 
 import javax.servlet.http.HttpSession;
@@ -21,11 +22,14 @@ public class Players{
 	private PreparedStatement pstmt;
 	
 	public Players() throws Exception{
-		System.out.println("OK");
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hitobaseball", "root", "root");
-			System.out.println("Players連線成功");
+			Properties prop = new Properties();
+			prop.setProperty("user", "root");
+			prop.setProperty("password", "root");
+			prop.setProperty("useUnicode", "true");
+			prop.setProperty("characterEncoding", "UTF-8");
+			conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/hitobaseball",prop);
 		}catch(Exception e) {
 			System.out.println(e.toString());
 		}
@@ -101,8 +105,6 @@ public class Players{
 		
 		String MyPlayerId = "SELECT * FROM players WHERE number='"+ number +"' AND name='"+ name + "' ";
 		
-		System.out.println("MyPlayerId:"+MyPlayerId);
-		
 		Statement stmt = conn.createStatement(
                 		 ResultSet.TYPE_SCROLL_INSENSITIVE,  
                 		 ResultSet.CONCUR_READ_ONLY); 
@@ -114,7 +116,6 @@ public class Players{
 					String mypid = (result.getString("playerId")); 
 					String mypnumber = (result.getString("number")); 
 					String mypname = (result.getString("name")); 
-					//System.out.println(myid);
 					res= mypid ;
 				}
 				

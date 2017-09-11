@@ -6,7 +6,8 @@
 <%@page import="fsit03_HitoBaseBall.TeamModel"%>
 
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="javax.servlet.http.HttpSession"%>
+<%@ page import="javax.servlet.http.HttpSession"%>
+
 
 <%
 
@@ -41,6 +42,8 @@ if(rs.next()) {
 	team.setEmail(rs.getString("email"));
 	}
 
+
+
 %>
     
 <!DOCTYPE html>
@@ -48,7 +51,7 @@ if(rs.next()) {
 <head>
     <title>後台-球員頁</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="css/players.css">
@@ -67,7 +70,7 @@ if(rs.next()) {
 
 <body>
 
-<div class="play"><!--ALLdiv-->
+<div class="container"><!--ALLdiv-->
    <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       
@@ -184,7 +187,7 @@ if(rs.next()) {
       </td>
       
       <td class="photo_td">
-       <img src="upload\<%= team.getTeamId() %>_logo.png" alt="photo" style="width:50px" >
+       <img src="upload\<%= team.getTeamId() %>_<%= player.getNumber() %>.png" alt="photo" style="width:50px" >
       </td>
       
       <td>
@@ -202,7 +205,7 @@ if(rs.next()) {
 
 <hr>
 
-<form action="AddPlayer" enctype="multipart/form-data" method="post">
+<form action="AddPlayer" accept-charset="UTF-8"  enctype="multipart/form-data" method="post">
 <div id="table" class=" w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
 <div class="tabless ">
   	
@@ -327,9 +330,11 @@ $('body').on('click', '.addsection', function() {
 	    } else if ($(this).attr('type') == 'date'&& $(this).prop('name') == 'birthday01'){
 	    	$(this).prop('name',"birthday"+newId);
 	    } else if ($(this).attr('type') == 'checkbox'&& $(this).prop('name') == 'position01'){
-	    	$(this).prop('name',"position"+newId)
+	    	$(this).prop('name',"position"+newId);
 	    } else if ($(this).attr('type') == 'hidden'&& $(this).prop('name') == 'end'){
 		    	$(this).prop('name',"end");
+	    } else if ($(this).attr('type') == 'file'&& $(this).prop('name') == 'photo01'){
+	    	$(this).prop('name',"photo"+newId);
 	    } else{
 	        $(this).val('');
 	    }
