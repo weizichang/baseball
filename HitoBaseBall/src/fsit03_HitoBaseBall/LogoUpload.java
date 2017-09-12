@@ -50,7 +50,7 @@ public class LogoUpload extends HttpServlet {
 					  	
 					  }
 					  //request.getRequestDispatcher("MyTeam").forward(request, response);
-					  response.sendRedirect("MyTeam");
+					  //response.sendRedirect("MyTeam");
 			  
 			  
 	}
