@@ -66,7 +66,8 @@ public class AddPlayer extends HttpServlet {
 			// TODO Auto-generated catch block
 			System.out.println(e.toString());
 		}
-		request.getRequestDispatcher("ShowPlayers").forward(request, response);
+	
+		request.getRequestDispatcher("loading2.html").forward(request, response);
 	}
 	
 	private LinkedList<PlayerModel> doDo(HttpServletRequest request) {
@@ -100,7 +101,7 @@ public class AddPlayer extends HttpServlet {
 		    String fileName = item.getName();
 		    String value =item.getString();
 		    String key = item.getFieldName();
-		    System.out.println("n:"+dataCount+" fileName:"+fileName+" value:"+value+" key:" + key);
+		    //System.out.println("n:"+dataCount+" fileName:"+fileName+" value:"+value+" key:" + key);
 		    if(fileName != null) {
 		    	BufferedImage bi = null;
 		    	try {
@@ -144,7 +145,6 @@ public class AddPlayer extends HttpServlet {
 							e.printStackTrace();
 						}
 						player.setName(name);
-						System.out.println(name);
 						break;
 					case 2:
 						player.setHeight((String)tmpPlayer.get(j));
@@ -167,7 +167,7 @@ public class AddPlayer extends HttpServlet {
 							e.printStackTrace();
 						}
 		    	
-						System.out.println(tmpPlayer.get(j));
+						//System.out.println(tmpPlayer.get(j));
 						break;
 					case 6:
 						player.setThr((String)tmpPlayer.get(j));
@@ -176,11 +176,28 @@ public class AddPlayer extends HttpServlet {
 						player.setHit((String)tmpPlayer.get(j));
 						break;
 					case 8:
-						player.setPosition((String)tmpPlayer.get(j));
+						String strpos = (String)tmpPlayer.get(j);
+						String namepos = "";
+						try {
+							namepos = new String (strpos.getBytes("iso-8859-1"), "UTF-8");
+						} catch (UnsupportedEncodingException e) {
+							e.printStackTrace();
+						}
+						player.setPosition(namepos);
 						break;
 					default:
+						//
+						String strposs = (String)tmpPlayer.get(j);
+						String nameposs = "";
+						try {
+							nameposs = new String (strposs.getBytes("iso-8859-1"), "UTF-8");
+						} catch (UnsupportedEncodingException e) {
+							e.printStackTrace();
+						}
+						//player.setPosition(namepos);
+						//
 						StringBuilder sb = new StringBuilder();
-						sb.append(player.getPosition()+"/"+tmpPlayer.get(j));
+						sb.append(player.getPosition()+"/"+nameposs);
 						player.setPosition(sb.toString());
 				}
 				
@@ -200,7 +217,7 @@ public class AddPlayer extends HttpServlet {
 			out.write(bytes.getBytes());
 			out.flush();
 			out.close();
-			System.out.println(pnumber);
+			//System.out.println(pnumber);
 //			//取得teamid
 //			
 //			

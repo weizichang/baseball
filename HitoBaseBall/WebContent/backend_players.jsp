@@ -57,6 +57,8 @@ if(rs.next()) {
     <link rel="stylesheet" href="css/players.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     
     <!--api-->
@@ -69,75 +71,65 @@ if(rs.next()) {
 
 
 <body>
+<!--頁籤 -->
+   	<div class="w3-bar w3-black">
+    	<a href="#" class="w3-bar-item w3-button"></a>
+    	<div class="w3-dropdown-hover">
+    	
+	    	<img alt="menu" src="imgs/ball03_512px_LOGO.png" style=" width: 32px; margin-bottom:10px ">
+			<span style=" color: white; font-size: 32px ">HitoBaseball</span>
+			
+	      	<div class="w3-dropdown-content w3-bar-block w3-card-4">
+	        	<a href="index.jsp" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a>
+				<a href="MyTeam" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a>
+				<a href="ShowPlayers" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球員</a>
+				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon04_512px.png" style=" width: 24px; ">&nbsp;造訪球隊</a>
+				<a href="Main2" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;預覽球隊主頁</a>
+				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon05_512px.png" style=" width: 24px; ">&nbsp;登出</a>
+	       </div>
+    	</div>
+    	 <a class="w3-bar-item w3-button w3-right" >
+    	 	<img src="upload/<%= team.getTeamId() %>_logo.png" style=" width: 40px; "></a>
+    </div>
 
 <div class="container"><!--ALLdiv-->
-   <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>                        
-        </button>
-        <img  src="" width="60px">
-      </div>
-      
-      <div class="collapse navbar-collapse" id="myNavbar">
-        <ul class="nav navbar-nav">
-          <li><a href="">FindTeam</a></li>
-          <li><a href="Players.html">賽程查詢</a></li>
-        </ul>
-        <ul class="nav navbar-nav navbar-right">
-          <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Login</a></li>
-        </ul>
-      </div>
-      
-    </div>
-   </nav>
-    
-    
-<div class="container">
 
+    
 <!--我的球隊圖片-->
-<div class="myTeamArea">
-    <img src="upload\<%= team.getTeamId() %>_logo.png" alt="logo" style="width:200px" ><br>
-     <div class="changeButton">
-	     <input type="file" title="更換球隊logo" class="changButton" data-filename-placement="inside">
-	     <input type="submit" value="確定更換" class="w3-button With w3-small w3-green">
+<!-- <div class="w3-container"> -->
+	<div class="w3-container w3-half ">
+	  <div class="w3-panel w3-leftbar w3-border-blue w3-white w3-round-xlarge"  style="width:40%">
+	  	<h2 class="w3-text-black">players</h2>
+	  	<p style="color: black;"><i>players</i></p>
 	  </div>
-    <br> <%= team.getTeamname() %>
-    <br>FB網址:<%= team.getFb() %>
-    <br>E-mail:<%= team.getEmail() %>
-  </div>
-
-<!--頁籤-->
-<nav class="navbar navbar-default" style="background-color: #d4e7f4;">
-	<div class="navbar-header">
-      	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#listbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span> 
 	</div>
-
-	<div class="collapse navbar-collapse" id="listbar">
-	    <ul class="nav navbar-nav">
-	        <li><a href="MyTeam" >編輯球隊資料</a></li>
-	        <li class="active"><a lass="nav-link" href="backend_players.jsp">編輯球員資料</a></li>
-	        <li><a lass="nav-link" href="">賽程查詢/預排</a></li>
-	        <li><a lass="nav-link" href="">紀錄查詢/修改</a></li>
-	        <li><a lass="nav-link" href="">Preview</a></li>
-	    </ul>
+	
+<!-- 	<div class="w3-container w3-third"> -->
+<!-- 	  <div class="w3-card-4" style="width:20%" > -->
+<%-- 	    <img src="upload/<%= team.getTeamId() %>_logo.png" style="width:100%" class="w3-animate-left"> --%>
+<!-- 	  </div> -->
+<!-- 	</div> -->
+	
+	<div class="w3-container w3-rest ">
+	      	  <div class="w3-panel w3-rightbar w3-border-blue w3-text-black w3-container w3-right w3-white w3-round-xlarge"  style="width:40%"">
+	      		<span style="font-size:40px;font-weight:bold;" class="w3-animate-left"><%= team.getTeamname() %></span><br>
+	      		<span style="font-size:20px;font-weight:bold;" class="w3-animate-left"><%= team.getEmail() %></span>
+	      	  </div>
 	</div>
-</nav>
+<!-- </div> -->
 
 <!--從資料庫列出多筆資料-->
-<div>
- <table id="playertable">
-   
- <% 
- if(sqlplayers.size() >0){%>
-   <tr>
+<div class="w3-container">
+
+
+
+  
+
+  <table class="w3-table w3-card-4 w3-centered ">
+    <thead>
+    <% 
+ 	if(sqlplayers.size() >0){%>
+    <tr class="w3-light-grey">
      <th>背號</th>
      <th>姓名</th></th>
      <th>守備位置</th>
@@ -149,150 +141,194 @@ if(rs.next()) {
      <th>照片</th>
      <th></th>
    </tr>
- <%
+   <%
  for(int i=0;i<sqlplayers.size();i++){
  	PlayerModel player = (PlayerModel)sqlplayers.get(i);
  %>
-    <tr>
-      <td>
-      <input name="teamName" type="text" class="inputA" value=<%= player.getNumber() %>>
+   </thead>
+   
+    <tr class="w3-white">
+      <td contenteditable="true" >
+      <input name="teamName" type="text" class="w3-input" style="text-align:center;" value=<%= player.getNumber() %>>
       </td>
         
-      <td>
-      <input type="text" class="inputB" value=<%= player.getName() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" value=<%= player.getName() %>>
       </td>
         
-      <td>
-      <input type="text" class="inputC" value=<%= player.getPosition() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" value=<%= player.getPosition() %>>
       </td>
       
-      <td>
-      <input type="text" class="inputD" value=<%= player.getHit() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" value=<%= player.getHit() %>>
       </td>
       
-      <td>
-      <input type="text" class="inputE" value=<%= player.getThr() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" value=<%= player.getThr() %>>
       </td>
       
-      <td>
-      <input type="text" class="inputF" value=<%= player.getHeight() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" value=<%= player.getHeight() %>>
       </td>
       
-      <td>
-      <input type="text" class="inputG" value=<%= player.getWeight() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" style="text-align:center;" value=<%= player.getWeight() %>>
       </td>
       
-      <td>
-      <input type="text" class="inputH" value=<%= player.getBirthday() %>>
+      <td contenteditable="true">
+      <input type="text" class="w3-input" style="text-align:center;" value=<%= player.getBirthday() %>>
       </td>
       
       <td class="photo_td">
        <img src="upload\<%= team.getTeamId() %>_<%= player.getNumber() %>.png" alt="photo" style="width:50px" >
       </td>
       
-      <td>
-      <input type="button" class="deleteButton" value="刪除">
+      <td contenteditable="true">
+      <button class="w3-button w3-red w3-round-large w3-small">刪除</button>
       </td>
       
     </tr>
     <% }}%>
-  </table>
-</div>  
-
- <div class="scbutton">
-    	<button type="submit" class="saveButton">儲存變更</button>
- </div>
+    
+  </table><br>
+<!--  <div class="scbutton"> -->
+<!--     <p class="w3-right"> -->
+<!--     	<button type="submit" class="w3-button w3-teal w3-round-large">儲存變更</button> -->
+<!--     </p> -->
+<!--  </div> -->
+</div>
 
 <hr>
 
+<div>
 <form action="AddPlayer" accept-charset="UTF-8"  enctype="multipart/form-data" method="post">
 <div id="table" class=" w3-container w3-card-4 w3-light-grey w3-text-blue w3-margin">
-<div class="tabless ">
+<div class="tabless "><br>
   	
-  	<div class="w3-container w3-blue">
-      <h4>新增球員</h4>
+  	<div class="w3-container w3-blue"><i class="fa fa-address-card" ></i>
     </div>
   
     <div class="w3-row w3-section">
-	    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-		<div class="w3-rest"><input type="text" class="w3-input w3-border" placeholder="背號" name="number01"/></div>
+	    <div class="w3-row-padding" >
+		    <!--背號-->
+		    <div class="w3-half">
+			    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user" style="font-size:30px"></i></div>
+				<div class="w3-rest"><input type="text" class="w3-input w3-border" placeholder="背號" name="number01"/></div>
+			</div>
+			
+			
+			<!--姓名-->
+			<div class="w3-half">
+			    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user" style="font-size:30px"></i></div>
+				<div class="w3-rest"><input type="text" class="w3-input w3-border" placeholder="姓名" name="name01"/></div>
+			</div>
+		</div>
 	</div>
 	
-	
-	<div class="w3-row w3-section">
-	    <div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
-		<div class="w3-rest"><input type="text" class="w3-input w3-border" placeholder="姓名" name="name01"/></div>
-	</div>
 		
 	<div class="w3-row w3-section">
-		<div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>
+	<div class="w3-row-padding">
+	<!--身高-->
+	<div class="w3-quarter">
+		<div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user" style="font-size:30px"></i></div>
 		<div class="w3-rest"><input type="text" class="w3-input w3-border" placeholder="身高" name="height01"/></div>
 	</div>
 		    
-	<div class="w3-row w3-section">
-		<div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>     
+	<!--體重-->    
+	<div class="w3-quarter">
+		<div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user " style="font-size:30px"></i></div>     
 	    <div class="w3-rest"><input type="text" class="w3-input w3-border" placeholder="體重" name="weight01"/></div>
 	</div> 
 		    
-	<div class="w3-row w3-section">	 
-		<div class="w3-col" style="width:50px"><i class="w3-xxlarge fa fa-user"></i></div>                
+	<!--生日-->
+	<div class="w3-quarter">
+		<div class="w3-col" style="width:50px"><i class="fa fa-calendar " style="font-size:30px"></i></div>                
 		<div class="w3-rest">生日：<input type="date" class="w3-input w3-border" placeholder="生日" name="birthday01"/></div> 
 	</div>
 	  
-	 <div class="w3-row w3-section">	
+	 <!--球員照片上傳-->
+	 <div class="w3-quarter">
+	    <div class="w3-col" style="width:50px"><i class="fa fa-file-image-o " style="font-size:30px"></i></div> 
         <div class="w3-rest">照片：<input title="球員照片上傳" type="file" name='photo01' data-filename-placement="inside"/></div> <!--照片-->
      </div>
+     </div>
+     </div>
       
-      <div> 
-                                投：
-            <input type="radio" name="hit01" value="R"/>R
-            <input type="radio" name="hit01" value="L"/>L
-            <input type="radio" name="hit01" value="R/L"/>R/L
+      <div class="w3-row">
+	  <!--投-->
+	  <div class="w3-col" style="width:25%">
+	  <p>投球方式：
+            <input class="w3-radio" type="radio" name="hit01" value="R"/><label>R</label>
+            <input class="w3-radio" type="radio" name="hit01" value="L"/><label>L</label>
+            <input class="w3-radio" type="radio" name="hit01" value="R/L"/><label>R/L</label>
+      </p>
       </div>
+      
+      
             
-      <div>   
-                               打：
-            <input type="radio" name="thr01" value="R"/>R
-            <input type="radio" name="thr01" value="L"/>L
-            <input type="radio" name="thr01" value="R/L"/>R/L
-      </div><br>
+        <!--打--> 
+	    <div class="w3-col" style="width:25%">
+	    <p>打擊方式：
+            <input class="w3-radio" type="radio" name="thr01" value="R"/><label>R</label>
+            <input class="w3-radio" type="radio" name="thr01" value="L"/><label>L</label>
+            <input class="w3-radio" type="radio" name="thr01" value="R/L"/><label>R/L</label>
+        </p>
+     </div> 
+     </div>
       
-      <div>
-                             守備位置：
-          <input type="checkbox" name="position01" value="投手"/>投手
-          <input type="checkbox" name="position01" value="捕手"/>捕手
-          <input type="checkbox" name="position01" value="一壘手"/>一壘手
-          <input type="checkbox" name="position01" value="二壘手"/>二壘手
-          <input type="checkbox" name="position01" value="三壘手"/>三壘手
-          <input type="checkbox" name="position01" value="游擊手"/>游擊手
-          <input type="checkbox" name="position01" value="右外野"/>右外野
-          <input type="checkbox" name="position01" value="中外野"/>中外野
-          <input type="checkbox" name="position01" value="左外野"/>左外野
-      </div>  
       
+      <div class="w3-row">
+	  <!--守備位置-->
+	  <div class="w3-col" style="width:100%">
+	  <p>守備位置：
+          <input class="w3-check" type="checkbox" name="position01" value="投手"/>投手
+          <input class="w3-check" type="checkbox" name="position01" value="捕手"/>捕手
+          <input class="w3-check" type="checkbox" name="position01" value="一壘手"/>一壘手
+          <input class="w3-check" type="checkbox" name="position01" value="二壘手"/>二壘手
+          <input class="w3-check" type="checkbox" name="position01" value="三壘手"/>三壘手
+          <input class="w3-check" type="checkbox" name="position01" value="游擊手"/>游擊手
+          <input class="w3-check" type="checkbox" name="position01" value="右外野"/>右外野
+          <input class="w3-check" type="checkbox" name="position01" value="中外野"/>中外野
+          <input class="w3-check" type="checkbox" name="position01" value="左外野"/>左外野
+      </p>
+	  </div>
+	  </div>
+      
+       <!--隱藏欄位-->
       <div><input type="hidden" name="end" value="end"/></div>
       
+      <!--刪除表單-->
        <div> 
-          <button class="remove">刪除</button>
-       </div><br>
+       		<button class="w3-button w3-blue w3-round" >刪除</button>
+       </div>
+       
+       </div><!--tabless-->
 	
-</div>
-</div>
-
- <button class="addbutton" type="submit">儲存新增</button>
- <button class="addsection">多筆新增</button> 
+<!--兩個案鈕-->
  
+ 
+ </div>
+ </div>
+ 	 <div class="w3-container">
+ 	 <button class="w3-button w3-teal w3-round-large" type="submit">儲存</button>
+ 	 <button class="w3-button w3-yellow addsection w3-round-large">多筆新增</button> 
+ 	 </div><br>
+
 </form>
+</div>
 
+ 
+</div><!--ALL-div-->
 
-</div> 
-
-
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+<footer class="w3-container w3-padding-20 w3-center w3-xlarge" style="background-color:#203562; color:white;">
+  <div class="w3-section">
+  	<i class="w3-medium">Copyright By
+  		<a style="color:lightgray" href="mailto:hitobaseball2017@gmail.com" class="w3-hover-text-white">Ed, Double, Weizi</a></i>
+    <i class="fa fa-facebook-official w3-hover-white"></i>
+  </div>
 </footer>
 
-</div><!--ALL-div-->
 
 
 

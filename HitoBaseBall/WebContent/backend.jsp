@@ -21,6 +21,8 @@ TeamModel team =(TeamModel) request.getAttribute("team");
     <link rel='stylesheet' href='css/modal.css'>
     <link rel="stylesheet" href="css/backend.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
@@ -34,9 +36,9 @@ TeamModel team =(TeamModel) request.getAttribute("team");
    <img alt="menu" src="imgs/ball03_512px_LOGO.png" style=" width: 72px; margin-right: -10px; "> 
    HitoBaseball</span> 
    <div class="w3-dropdown-content w3-bar-block w3-border"> 
-    <a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a> 
-    <a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;建立球隊</a> 
-    <a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a> 
+    <a href="index.jsp" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a> 
+    <a href="MyTeam" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;建立球隊</a> 
+    <a href="ShowPlayers" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a> 
     <a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon04_512px.png" style=" width: 24px; ">&nbsp;造訪球隊</a> 
     <a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon05_512px.png" style=" width: 24px; ">&nbsp;快速登入</a> 
    </div> 
@@ -69,11 +71,14 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 </div>
 </div><!--ALL-div-->
 
-<div style=" text-align: center; background-color: #203562; color: white ">
-   <p>Footer Text</p> 
-   <p>Footer Text</p> 
-   <p>Footer Text</p> 
-</div> 
+
+<footer class="w3-container w3-padding-20 w3-center w3-xlarge w3-bottom" style="background-color:#203562; color:white;">
+  <div class="w3-section">
+  	<i class="w3-medium">Copyright By
+  		<a style="color:lightgray" href="mailto:hitobaseball2017@gmail.com" class="w3-hover-text-white">Ed, Double, Weizi</a></i>
+    <i class="fa fa-facebook-official w3-hover-white"></i>
+  </div>
+</footer>
 
 </body>
 

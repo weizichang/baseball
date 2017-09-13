@@ -56,7 +56,7 @@ public class PhotoUpload extends HttpServlet {
 					  	
 					  }
 					  //request.getRequestDispatcher("MyTeam").forward(request, response);
-					  //response.sendRedirect("MyTeam");
+					  response.sendRedirect("loading.html");
 	}
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

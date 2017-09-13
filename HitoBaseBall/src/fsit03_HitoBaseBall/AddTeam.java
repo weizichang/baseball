@@ -41,7 +41,7 @@ public class AddTeam extends HttpServlet {
 			
 			//抓TeamID
 			String id = team.geteamID();
-			System.out.println("ADDTeam get id:"+id);
+//			System.out.println("ADDTeam get id:"+id);
 			
 			//Session
 			HttpSession session = request.getSession();

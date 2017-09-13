@@ -33,6 +33,8 @@ TeamModel team =(TeamModel) request.getAttribute("team");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel='stylesheet' href='css/modal.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     
     <!--api-->
@@ -46,7 +48,6 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 
 
 <body>
-<div class="w3-container">
 	<!--頁籤 -->
 	<div class="w3-bar w3-black">
     	<a href="#" class="w3-bar-item w3-button"></a>
@@ -56,21 +57,24 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 			<span style=" color: white; font-size: 32px ">HitoBaseball</span>
 			
 	      	<div class="w3-dropdown-content w3-bar-block w3-card-4">
-	        	<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a>
-				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a>
-				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球員</a>
+	        	<a href="index.jsp" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a>
+				<a href="MyTeam" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a>
+				<a href="ShowPlayers" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球員</a>
 				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon04_512px.png" style=" width: 24px; ">&nbsp;造訪球隊</a>
-				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;預覽球隊主頁</a>
+				<a href="Main2" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;預覽球隊主頁</a>
 				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon05_512px.png" style=" width: 24px; ">&nbsp;登出</a>
 	       </div>
     	</div>
     </div>
 
+<div class="w3-container"><br><br>
+
+
 <!--我的球隊圖片，圖片及資料要變更-->
-<div class="container">
-<br>
+<div class="container w3-white">
+
 <div class="w3-container w3-half ">
-	 <div class="w3-panel w3-leftbar w3-border-blue">
+	 <div class="w3-panel w3-leftbar w3-border-blue ">
   		<h2 class="w3-text-blue">Edit My TeamLogo</h2>
   	</div>
 
@@ -84,7 +88,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 			        <img class="preview" style="max-width: 150px; max-height: 150px;margin-bottom: 15px;">
 	    		</div>
 			        <input type="file" title="logo" id="myFile" name="logo" data-filename-placement="inside" class="upl">
-			        <button type="submit" class="w3-button w3-yellow">確定</button>
+			        <button type="submit" class="w3-button w3-blue w3-round-large w3-small" >確定</button>
 	       </form>
 	        
 	      </div>
@@ -96,7 +100,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 <div class="w3-container w3-half ">
 <div class="w3-panel w3-leftbar w3-border-blue">
   		<h2 class="w3-text-blue">Edit My Team Information</h2>
-  		<p style="color: white;"><i>Change TeamName or FB_URL or E-mail_Address</i></p>
+  		<p style="color: black;"><i>Change TeamName or FB_URL or E-mail_Address</i></p>
   	</div>
   	
 	<form action="UpdateTeam">
@@ -120,16 +124,16 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 	  	</tr>
 	  </table>
 	  <br>
-	  <p><button class="w3-button w3-teal" type="submit">儲存變更</button></p>
+	  <p><button class="w3-button w3-blue w3-round-large w3-small" type="submit">儲存變更</button></p>
 	   
 	</form>
 </div>
 
-<div class="w3-container">
+<div class="w3-container" >
 <!--幻燈照片區--><hr>
 	<div class="w3-panel w3-leftbar w3-border-blue">
 		<h2 class="w3-text-blue">Edit Team's SlideShow Photo</h2>
-		<p style="color: white;"><i>Edit My SlideShow Photo</i></p>
+		<p style="color: black;"><i>Edit My SlideShow Photo</i></p>
 	</div>
 </div>
 
@@ -144,7 +148,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 			 	<img class="preview1" style="max-width: 150px; max-height: 150px;margin-bottom: 15px;">
 	    	 </div>
 	      	<input type="file" title="SlideShow" id="myFile" name="p1" data-filename-placement="inside" class="upl1">
-	        <button class="w3-button w3-yellow">修改</button>
+	        <button class="w3-button w3-yellow w3-round-large w3-small">修改</button>
 	      </div>
 	    </div>
   </div>
@@ -161,7 +165,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 			 	<img class="preview2" style="max-width: 150px; max-height: 150px;margin-bottom: 15px;">
 	    	 </div>
 	        <input type="file" title="SlideShow" id="myFile" name="p2" data-filename-placement="inside" class="upl2">
-	        <button class="w3-button w3-yellow">修改</button>
+	        <button class="w3-button w3-yellow w3-round-large w3-small">修改</button>
 	      </div>
 	    </div>
   </div>
@@ -177,7 +181,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 			 	<img class="preview3" style="max-width: 150px; max-height: 150px;margin-bottom: 15px;">
 	    	 </div>
 	        <input type="file" title="SlideShow" id="myFile" name="p3" data-filename-placement="inside" class="upl3">
-	        <button class="w3-button w3-yellow">修改</button>
+	        <button class="w3-button w3-yellow w3-round-large w3-small">修改</button>
 	      </div>
 	    </div>
   </div>
@@ -194,32 +198,38 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 			 	<img class="preview4" style="max-width: 150px; max-height: 150px;margin-bottom: 15px;">
 	    	 </div>
 	        <input type="file" title="SlideShow" id="myFile" name="p4" data-filename-placement="inside" class="upl4">
-	        <button class="w3-button w3-yellow">修改</button>
+	        <button class="w3-button w3-yellow w3-round-large w3-small">修改</button>
 	      </div>
 	    </div>
   </div>
 </div>
 	<div class="w3-container">
 		<p class="w3-right">
-			<button class="w3-button w3-teal" type="submit" style="margin-top: 15px;">執行上傳</button>
+			<button class="w3-button w3-teal w3-round-larg" type="submit" style="margin-top: 15px;">確定</button>
 		</p>
 	</div>
 </form>
 
-</div>
-</div><!--ALL-div-->
+</div><br>
 
 
-<div style=" text-align: center; background-color: #203562; color: white ">
-   <p>Footer Text</p> 
-   <p>Footer Text</p> 
-   <p>Footer Text</p> 
-</div>
+<footer class="w3-container w3-padding-20 w3-center w3-xlarge" style="background-color:#203562; color:white;">
+  <div class="w3-section">
+  	<i class="w3-medium">Copyright By
+  		<a style="color:lightgray" href="mailto:hitobaseball2017@gmail.com" class="w3-hover-text-white">Ed, Double, Weizi</a></i>
+    <i class="fa fa-facebook-official w3-hover-white"></i>
+  </div>
+</footer>
+
 
 </body>
 
 
 <script>
+//reload
+
+
+
 //logo
 $(function (){
     function format_float(num, pos)
