@@ -18,23 +18,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
   <style>
     /* Add a gray background color and some padding to the footer */
     body {
-			font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+		background-color:#000000;
 		}
     
-    footer {
-      background-color: #f2f2f2;
-      padding: 25px;
-    }
-    
-    .navbar{
-    	background-color:#203562;
-    }
-
     .carousel-inner img {
       width: 100%; /* Set width to 100% */
       /*min-height: 200px;*/
@@ -48,8 +43,9 @@
 	}
 	
 	.well {
-	  background-color:#F1F6F8;
+	  background-color:#000000;
 	  text-align:center;
+/* 	  #F1F6F8 */
 	}
 	
 	#myCarousel{
@@ -63,7 +59,8 @@
 	}
 	
 	.table{
-	  background-color:#BDF1F6;
+	  background-color:#fff;
+/* 	  #BDF1F6 */
 	}
 	
 	.table > tbody > tr > td {
@@ -71,11 +68,10 @@
       font-size:18px;
     }
     
-   
 	th{
 	  color:white;
 	  font-size: 20px;
-	  background-color:#0245A3;
+	  background-color:#203562;
 	}
 	
 	th > span{
@@ -87,54 +83,44 @@
         display: none; 
       }
       
-      #myCarousel{
-        height:100%;
-        /*overflow:hidden;*/
-      }
+    #myCarousel{
+      height:100%;
+      /*overflow:hidden;*/
+    }
       
     }
   </style>
 </head>
+
 <body>
- <!--導覽列-->
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a href="Main"><img src="./upload/img/A21.png" style="width:70px;height:70px;"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="Main">球隊主頁</a></li>
-        <li><a href="ShowPlayer?teamID=<%= team.getTeamId()%>">球員列表</a></li>
-        <li><a href="Schedule">賽程</a></li>
-        <!--<li><a href="#">Contact</a></li>-->
-      </ul>
-      <!--<ul class="nav navbar-nav navbar-right">-->
-      <!--  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-      <!--</ul>-->
-    </div>
-  </div>
-</nav>
+<!--bar-->
+<div class="w3-bar w3-black">
+	<a href="#" class="w3-bar-item w3-button"></a>
+	<div class="w3-dropdown-hover">
+	
+	 	<img alt="menu" src="imgs/ball03_512px_LOGO.png" style=" width: 32px; margin-bottom:10px ">
+		<span style=" color: white; font-size: 32px ">HitoBaseball</span>
+	
+	   	<div class="w3-dropdown-content w3-bar-block w3-card-4">
+	     	<a href="index.jsp" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a>
+			<a href="MyTeam" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a>
+			<a href="ShowPlayers" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球員</a>
+			<a href="Main" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon04_512px.png" style=" width: 24px; ">&nbsp;造訪球隊</a>
+			<a href="ShowPlayer" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;球員列表</a>
+			<a href="Schedule" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<i class="fa fa-calendar" style="font-size:26px"></i>&nbsp;賽程</a>
+			<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon05_512px.png" style=" width: 24px; ">&nbsp;登出</a>
+	    </div>
+	</div>
+</div>
 
-<!--<div class="content">-->
-  <!--幻燈片-->
-  
+<!--幻燈片-->
 <div class="container">
-<!--<div class="row">-->
-  <!--<div class="col-sm-10">-->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
+   <div id="myCarousel" class="carousel slide" data-ride="carousel">
       <ol class="carousel-indicators">
         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#myCarousel" data-slide-to="1"></li>
         <li data-target="#myCarousel" data-slide-to="2"></li>
-        <!--<li data-target="#myCarousel" data-slide-to="3"></li>-->
       </ol>
 
       <!-- Wrapper for slides -->
@@ -172,27 +158,24 @@
         <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-    </div>
-  <!--</div>-->
-  <div class="row">
-    <div class="col-sm-1"></div>
-    <div class="col-sm-5 well">
-       <a href="https://www.facebook.com/Brotherelephants" target="_blank"><%= team.getName() %></a>
-    </div>
-    <div class=" col-sm-5 well">
-       <a href="mailto:<%= team.getMail() %>">聯絡信箱</a>
-    </div>
-    <div class="col-sm-1"></div>
-  </div>
-<!--</div>-->
-<!---->
+   </div>
 </div>
+
+  	<div class="w3-center">
+	   	<div class="w3-tag w3-round w3-blue w3-animate-top" style="padding:6px; width:300px;">
+		    <div class="w3-tag w3-round w3-blue w3-border w3-border-white" style="width:290px">
+		  		<h2><%= team.getName() %></h2>
+		  		<h4>STATS 數據統計</h4>
+		  	</div>
+	  	</div>
+	</div><br>
+
 <!--各項成績-->
 <div class="container text-center">    
-  <h3>STATS 數據統計</h3><br>
+<!--   <h3>STATS 數據統計</h3><br> -->
   <div class="row">
-    <div class="col-sm-4">
-        <table class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0">
+    <div class="col-sm-4 ">
+        <table class="table table-hover w3-card-4 " width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
                     <th colspan="4">AVG <span>打擊率</span></th>
@@ -215,10 +198,10 @@
         </table>
     </div>
     <div class="col-sm-4 player">
-        <table class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4">H  <span>安打數</span></th>
+                    <th colspan="4" class="w3-blue">H  <span>安打數</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -238,10 +221,10 @@
         </table>
     </div>
     <div class="col-sm-4" >
-        <table class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4">RBI <span>打點</span></th>
+                    <th colspan="4" class="w3-blue">RBI <span>打點</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -264,10 +247,10 @@
 <!---->
   <div class="row">
     <div class="col-sm-4" >
-        <table class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4">ERA <span>自責分率</span></th>
+                    <th colspan="4" class="w3-blue">ERA <span>自責分率</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -287,10 +270,10 @@
         </table>
     </div>
     <div class="col-sm-4">
-        <table class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4">SO <span>奪三振</span></th>
+                    <th colspan="4" class="w3-blue">SO <span>奪三振</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -310,7 +293,7 @@
         </table>
     </div>
     <div class="col-sm-4">
-        <table class="table table-hover" width="100%"  border="0" cellspacing="0" cellpadding="0">
+        <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
                     <th colspan="4">WHIP <span>每局被上壘率</span></th>
@@ -334,16 +317,23 @@
     </div>
   </div>
 </div>
-  <!---->
-<!--</div>-->
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+
+
+<footer class="w3-container w3-padding-20 w3-center w3-xlarge" style="background-color:#203562; color:white;">
+  <div class="w3-section">
+  	<i class="w3-medium">Copyright By
+  		<a style="color:lightgray" href="mailto:hitobaseball2017@gmail.com" class="w3-hover-text-white">Ed, Double, Weizi</a></i>
+    <i class="fa fa-facebook-official w3-hover-white"></i>
+  </div>
 </footer>
+
+
 <script>
 var myFunction = function (e) {
 	this.onerror=null;
 	e.src = "./upload/img/playerhead.png"
 }
 </script>
+
 </body>
 </html>

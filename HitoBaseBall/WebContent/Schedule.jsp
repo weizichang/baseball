@@ -23,6 +23,8 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <link rel="stylesheet" href="box_style.css" type="text/css" /> 
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
@@ -65,29 +67,25 @@
 </head>
 <body>
     
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>                        
-      </button>
-      <a href="Main"><img src="./upload/img/A21.png" style="width:70px;height:70px;"></a>
-    </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li><a href="Main">球隊主頁</a></li>
-        <li><a href="ShowPlayer">球員列表</a></li>
-        <li class="active"><a href="Schedule">賽程</a></li>
-        <!--<li><a href="#">Contact</a></li>-->
-      </ul>
-      <!--<ul class="nav navbar-nav navbar-right">-->
-      <!--  <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>-->
-      <!--</ul>-->
-    </div>
-  </div>
-</nav>
+<!--bar-->
+<div class="w3-bar w3-black">
+	<a href="#" class="w3-bar-item w3-button"></a>
+	<div class="w3-dropdown-hover">
+	
+	 	<img alt="menu" src="imgs/ball03_512px_LOGO.png" style=" width: 32px; margin-bottom:10px ">
+		<span style=" color: white; font-size: 32px ">HitoBaseball</span>
+	
+	   	<div class="w3-dropdown-content w3-bar-block w3-card-4">
+	     	<a href="index.jsp" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a>
+			<a href="MyTeam" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;編輯球隊</a>
+			<a href="ShowPlayers" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;編輯球員</a>
+			<a href="Main" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon04_512px.png" style=" width: 24px; ">&nbsp;造訪球隊</a>
+			<a href="ShowPlayer" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon03_512px.png" style=" width: 24px; ">&nbsp;球員列表</a>
+			<a href="Schedule" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<i class="fa fa-calendar" style="font-size:26px"></i>&nbsp;賽程</a>
+			<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon05_512px.png" style=" width: 24px; ">&nbsp;登出</a>
+	    </div>
+	</div>
+</div>
 
 <div class="container">
 	<div class="panel-group" id="accordion">
@@ -189,8 +187,13 @@
 %>
 	</div>
 </div>
-<footer class="container-fluid text-center">
-  <p>Footer Text</p>
+
+<footer class="w3-container w3-padding-20 w3-center w3-xlarge w3-bottom" style="background-color:#203562; color:white;">
+  <div class="w3-section">
+  	<i class="w3-medium">Copyright By
+  		<a style="color:lightgray" href="mailto:hitobaseball2017@gmail.com" class="w3-hover-text-white">Ed, Double, Weizi</a></i>
+    <i class="fa fa-facebook-official w3-hover-white"></i>
+  </div>
 </footer>
 
 </body>

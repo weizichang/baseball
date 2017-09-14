@@ -30,7 +30,7 @@ public class findTeam extends HttpServlet {
 			
 			//1.Driver Import
 			Class.forName("com.mysql.jdbc.Driver");
-			System.out.println("Driver OK!!!");		
+			//System.out.println("Driver OK!!!");		
 			
 			//2.Build Connection
 			Properties prop = new Properties();
@@ -38,11 +38,11 @@ public class findTeam extends HttpServlet {
 			prop.setProperty("password", "root");
 			
 			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hitobaseball", prop);
-			System.out.println("Connection OK!");
+			//System.out.println("Connection OK!");
 
 			//3.SQL Statement
 			PreparedStatement ps = conn.prepareStatement("select * from teams");			
-			System.out.println("Statement OK!");
+			//System.out.println("Statement OK!");
 			
 			//4.Query + XML
 			StringBuffer sb = new StringBuffer();
@@ -50,35 +50,39 @@ public class findTeam extends HttpServlet {
 			sb.append("<findTeam>");
 			
 			ResultSet rs = ps.executeQuery();
-			System.out.println("Query OK!");
+			//System.out.println("Query OK!");
 			while(rs.next()) {
 				sb.append("<team>");
 
-				sb.append("<teamID>");
-				sb.append(rs.getString("teamId"));
-				sb.append("</teamID>");				
+				sb.append("<teamid>");
+				sb.append(rs.getString("teamid"));
+				sb.append("</teamid>");				
 				
-				sb.append("<name>");
+				sb.append("<teamname>");
 				sb.append(rs.getString("teamname"));
-				sb.append("</name>");
+				sb.append("</teamname>");
+
+				sb.append("<fb>");
+				sb.append(rs.getString("fb"));
+				sb.append("</fb>");
 				
-				sb.append("<contact>");
-				sb.append(rs.getString("contact"));
-				sb.append("</contact>");
+				sb.append("<email>");
+				sb.append(rs.getString("email"));
+				sb.append("</email>");
 				
 				sb.append("<tel>");
 				sb.append(rs.getString("tel"));
 				sb.append("</tel>");
 				
-				sb.append("<fb>");
-				sb.append(rs.getString("fb"));
-				sb.append("</fb>");
+				sb.append("<mid>");
+				sb.append(rs.getString("mid"));
+				sb.append("</mid>");
 				
 				sb.append("</team>");
 			}
 			
 			sb.append("</findTeam>");
-			System.out.println("XML OK!");
+			//System.out.println("XML OK!");
 			
 			out.print(sb.toString());
 			

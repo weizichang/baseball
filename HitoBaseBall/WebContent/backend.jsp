@@ -20,7 +20,6 @@ TeamModel team =(TeamModel) request.getAttribute("team");
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel='stylesheet' href='css/modal.css'>
     <link rel="stylesheet" href="css/backend.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -53,7 +52,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
   <p>Create My Team</p>
 	  <p>      
 	  <label class="w3-text-blue"><b>球隊名稱</b></label>
-	  <input type="text" placeholder="E-mail" name="teamName" required class="w3-input w3-border">
+	  <input type="text" placeholder="球隊名稱" name="teamName" required class="w3-input w3-border">
 	  </p>
 	  
 	  <p>      

@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
+    pageEncoding="UTF-8"%>  
     
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -12,7 +11,6 @@
 	<meta name="keywords" content="棒球,紀錄,baseball,record" />
 	<meta name="description" content="歡迎來到「快速、簡易、即時的棒球球隊管理紀錄平台」" />
 	<meta name="author" content="Ed, Double, Weizi">
-	<meta name="URL" content="http://hitobaseball.com">
 	
 	<title>HitoBaseball</title>
 	
@@ -37,127 +35,9 @@
 	<link rel='stylesheet' href='css/index.css'>
 <!-- Import CSS -->
 
-	<style>
-/* 		body { */
-/* 			font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif; */
-/* 		} */
-		
-/* 		.mySlides { display: none; } */
-/* 		.w3-left, .w3-right, .w3-badge { cursor: pointer; } */
-/* 		.w3-badge { height: 13px; width: 13px; padding: 0; } */
-		
-/* 		.front_10 { z-index: 10; position: absolute; } */
-/* 		.front_0 { z-index: 0; position: relative; } */
-		
-/* 		.headers { width: 100%; object-fit: cover; height: 640px; } */
-		
-/* 		.myballs1, .myballs2, .myballs3 { display: none; } */
-		
-/* 		.hrstyle {  */
-/* 			border : 0; */
-/* 			height: 1px;  */
-/* 			background-image: linear-gradient(to right, rgba(192, 192, 192, 0.1), rgba(192, 192, 192, 0.5), rgba(192, 192, 192, 0.1));			 */
-/* 		} */
-		
-/* 		.linkbtn {  */
-/* 			width: 100%;  */
-/* 			margin: 0 auto;  */
-/* 			padding: 20px; */
-/* 			display: table; */
-/* 		 }		 */
-/* 		.linkimg0 { */
-/* 			width: calc(100% / 3 - 80px); */
-/* 			height: 260px; */
-/* 			display: inline-block; */
-/* 			margin: 20px 40px; */
-/* 			/*border: 3px solid red;*/ */
-/* 			border-radius: 5px; */
-/* 			background:white url("imgs/button03.jpg") center no-repeat; */
-/* 			background-size: cover; */
-/* 			position: relative; */
-/* 			cursor:pointer; */
-/* 		} */
-/* 		.linkimg1 { */
-/* 			width: calc(100% / 3 - 80px); */
-/* 			height: 260px; */
-/* 			display: inline-block; */
-/* 			margin: 20px 40px; */
-/* 			/*border: 3px solid red;*/ */
-/* 			border-radius: 5px; */
-/* 			background:white url("imgs/button09.jpg") center no-repeat; */
-/* 			background-size: cover; */
-/* 			position: relative; */
-/* 			cursor:pointer; */
-/* 		}		 */
-/* 		.linkimg2 { */
-/* 			width: calc(100% / 3 - 80px); */
-/* 			height: 260px; */
-/* 			display: inline-block; */
-/* 			margin: 20px 40px; */
-/* 			/*border: 3px solid red;*/ */
-/* 			border-radius: 5px; */
-/* 			background:white url("imgs/button02.jpg") center no-repeat; */
-/* 			background-size: cover; */
-/* 			position: relative; */
-/* 			cursor:pointer; */
-/* 		}		 */
-/* 		.linkimgtitle { 	 */
-/* 			position: absolute;  */
-/* 			width: 100%; */
-/* 			bottom: 0px; right: 0px;  */
-/* 			text-align: right;  */
-/* 			border-radius: 0 0 5px 5px; */
-/* 			color: white; */
-/* 			background-color: black;  */
-/* 			opacity: 0.7; filter: Alpha(opacity=70); /*IE8 and earlier*/ */
-/* 			font-size: 3.5vh; */
-/* 			cursor:pointer; */
-/* 		} */
-/* 		.linkimg0:hover > .linkimgtitle { display: none; } */
-/* 		.linkimg1:hover > .linkimgtitle { display: none; } */
-/* 		.linkimg2:hover > .linkimgtitle { display: none; }			 */
-/* 		.linkimgtext { */
-/* 			position: absolute; */
-/* 			width: 100%; */
-/* 			height: 100%; */
-/* 			top: 0px; left: 0px; */
-/* 			text-align: center; */
-/* 			border-radius: 5px; */
-/* 			color: transparent; */
-/* 			background-color: black;  */
-/* 			opacity: 0.0; filter: Alpha(opacity=0); /*IE8 and earlier*/ */
-/* 			font-size: 5vh; */
-/* 			cursor:pointer; */
-/* 		} */
-/* 		.linkimgtext:hover { */
-/* 			color: white; */
-/* 			opacity: 0.7; filter: Alpha(opacity=70); /*IE8 and earlier*/ */
-/* 			overflow: hidden; */
-/* 		} */
-		
-
-				
-/* 		@media screen and (min-width: 768px) and (max-width: 1260px) { */
-/* 			.linkimg0, .linkimg1, .linkimg2 { */
-/* 				width: calc(100% - 240px); */
-/* 				height: 460px; */
-/* 				margin: 80px 120px; */
-/* 			} */
-/* 		} */
-		
-/* 		@media screen and (min-width: 0px) and (max-width: 768px) { */
-/* 			.linkimg0, .linkimg1, .linkimg2 { */
-/* 				width: calc(100% - 40px); */
-/* 				height: 180px; */
-/* 				margin: 20px 20px; */
-/* 			} */
-/* 		}			 */
-		
-	</style>
-	
-	
-
-	
+<!-- reCAPTCHA -->
+	<script src='https://www.google.com/recaptcha/api.js'></script>
+<!-- reCAPTCHA -->	
 </head>
 
 <body>
@@ -165,8 +45,9 @@
 	<div class="w3-container front_10">
 		<p></p>
 		<div class="w3-dropdown-hover">
-			<img alt="menu" src="imgs/ball03_512px_LOGO.png" style=" width: 32px; ">
-			<span style=" color: white; font-size: 32px ">HitoBaseball</span>
+			<span style=" color: white; font-size: 48px; font-weight: bold; letter-spacing: -0.05em; ">
+			<img alt="menu" src="imgs/ball03_512px_LOGO.png" style=" width: 72px; margin-right: -10px; ">
+			HitoBaseball</span>
 			<div class="w3-dropdown-content w3-bar-block w3-border">
 				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon01_512px.png" style=" width: 24px; ">&nbsp;Hito首頁</a>
 				<a href="#" class="w3-bar-item w3-button" style=" font-size: 16px; ">&nbsp;<img src="imgs/menuicon02_512px.png" style=" width: 24px; ">&nbsp;建立球隊</a>
@@ -183,7 +64,6 @@
 	<div class="w3-content w3-display-container front_0" style=" max-width:100% ">
 		<img class="mySlides headers" src="imgs/header01.jpg" >		<!-- w3-opacity-min -->
 		<img class="mySlides headers" src="imgs/header06.jpg" >
-		<img class="mySlides headers" src="imgs/header13.jpg" >
 		<img class="mySlides headers" src="imgs/header14.jpg" >
 		 <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style=" width:100% ">
 		   <div class="w3-left w3-hover-text-khaki w3-xlarge" onclick="plusDivs(-1)">&#10094;</div>
@@ -191,7 +71,6 @@
 		   <span class="w3-badge demo w3-border w3-transparent w3-hover-yellow" onclick="currentDiv(1)"></span>
 		   <span class="w3-badge demo w3-border w3-transparent w3-hover-yellow" onclick="currentDiv(2)"></span>
 		   <span class="w3-badge demo w3-border w3-transparent w3-hover-yellow" onclick="currentDiv(3)"></span>
-		   <span class="w3-badge demo w3-border w3-transparent w3-hover-yellow" onclick="currentDiv(4)"></span>
 		 </div>
 	</div>
 	
@@ -321,7 +200,7 @@
 	<div class="linkbtn">
 	
 <!-- Build Edit Team -->	
-		<div class="linkimg0 w3-card-4" id="BuildTeamImg">
+		<div class="linkimg0 w3-card-4" id="BuildTeamImg" onclick="LoginModalOpen()">
 			<div class="linkimgtitle">
 				<span>New Coach || Manager&nbsp;</span>
 			</div>			
@@ -331,7 +210,7 @@
 			</div>
 		</div>	
 
-		<div class="linkimg1 w3-card-4" id="EditTeamImg">
+		<div class="linkimg1 w3-card-4" id="EditTeamImg" onclick="LoginModalOpen()">
 			<div class="linkimgtitle">
 				<span>Existing Coach || Manager&nbsp;</span>
 			</div>			
@@ -347,44 +226,167 @@
 			<section id="content">		
 				<span class="w3-button w3-display-topright w3-large" 
 		        onclick="document.getElementById('LoginModal').style.display='none'">&times;</span>	
-				<form action="Logging">
+				<form action="login" method="post">
 					<h1>歡迎登入</h1>
 					<div>
-						<input type="email" name='mail' placeholder="電子信箱" required=""  
-						id="LoginAcc"/>
+						<input type="email" placeholder="*註冊信箱" required=""  
+						id="loginAcc" name="loginAcc"/>
 					</div>
 					<div>
-						<input type="password" name='password' placeholder="登入密碼" required="" 
-						id="LoginPass" />
-					</div>					
+						<input type="password" placeholder="*登入密碼" required="" 
+						id="loginPass" name="loginPass"/>
+					</div>
+					<!-- reCAPTCHA -->
+					<div class="g-recaptcha" data-sitekey="6LeUNjAUAAAAAN2D60Q9LNjgHk_FuhyklpZuy7G6" id="reCAPTCH" data-callback="cbreCAPTCH" style=" margin-left: 20px; "></div>					
+					<!-- reCAPTCHA -->
 					<div>
-						<input type="submit" value="登入" />
-						<a href="#">忘記密碼?</a>
-						<a href="#">註冊</a>
+						<input type="submit" value="登入" id="loginSubmit" disabled="disabled"/>
+						<a href="#" onclick="ForgetModalOpen()">忘記密碼</a>
+						<a href="#" onclick="RegisterModalOpen()">註冊帳號</a>
 					</div>
 				</form>
 			</section>
 		</div>	
   			
 		</div>
+		
+		<div class="w3-modal" id="RegisterModal">
+		
+		<div class="container_m">
+			<section id="content">		
+				<span class="w3-button w3-display-topright w3-large" 
+		        onclick="document.getElementById('RegisterModal').style.display='none'">&times;</span>	
+				<form action="registration" method="post">
+					<h1>歡迎註冊</h1>
+					<div>
+						<input type="email" placeholder="*電子信箱(預設帳號)" required=""  
+						id="regisAcc" name="regisAcc"/>
+					</div>
+					<div>
+						<input type="password" placeholder="*登入密碼" required="" 
+						id="regisPass1" name="regisPass1"/>
+					</div>
+					<div>
+						<input type="password" placeholder="*再次確認密碼" required="" 
+						id="regisPass2" name="regisPass2" onkeyup="checkPassspan()"/>
+					</div>
+					<strong><span id="checkPass" style=" float: left; margin-left: 25px; "></span></strong>
+					<div>
+						<input type="text" placeholder="我們該如何稱呼您"  
+						id="memberName" name="memberName"/>
+					</div>										
+					<div>
+						<input type="submit" value="註冊" id="regisSubmit" disabled="disabled"/>
+						<a href="#" onclick="ForgetModalOpen()">忘記密碼</a>
+						<a href="#" onclick="LoginModalOpen()">返回登入</a>
+					</div>
+				</form>
+			</section>
+		</div>	
+  			
+		</div>
+		
+		<div class="w3-modal" id="ForgetModal">
+		
+		<div class="container_m">
+			<section id="content">		
+				<span class="w3-button w3-display-topright w3-large" 
+		        onclick="document.getElementById('ForgetModal').style.display='none'">&times;</span>	
+				<form action="" method="post">
+					<h1>重設密碼</h1>
+					<div>
+						<input type="email" placeholder="*註冊信箱" required=""  
+						id="forgetAcc"/>
+					</div>
+					<div>
+						<input type="password" placeholder="*登入密碼" required="" 
+						id="forgetPass1" />
+					</div>
+					<div>
+						<input type="password" placeholder="*再次確認密碼" required="" 
+						id="forgetPass2" onkeyup="forgetPassspan()"/>
+					</div>
+					<strong><span id="forgetPass" style=" float: left; margin-left: 25px; "></span></strong>
+					<div>
+						<input type="text" placeholder="*信箱驗證碼" required=""  
+						id="verifycode" />
+					</div>
+					<div>
+						<input type="submit" value="重設"  id="forgetSubmit" disabled="disabled"/>
+						<a href="#" onclick="RegisterModalOpen()">重新註冊</a>
+						<a href="#" onclick="LoginModalOpen()">返回登入</a>
+						<a href="#" onclick="">發送驗證碼</a>
+					</div>
+				</form>
+			</section>
+		</div>	
+  			
+		</div>				
 
 		<script>
-			//open the LoginModal
-			var BuildTeamImg = document.getElementById("BuildTeamImg");
-			var EditTeamImg = document.getElementById("EditTeamImg");
+			//open the LoginModal RegisterModal ForgetModal
 			var LoginModal = document.getElementById("LoginModal");
+			var RegisterModal = document.getElementById("RegisterModal");
+			var ForgetModal = document.getElementById("ForgetModal");
 			
- 			BuildTeamImg.onclick = function() { 
- 				LoginModal.style.display = "block"; 
+			function LoginModalOpen() { 
+ 				LoginModal.style.display = "block";
+ 				RegisterModal.style.display = "none";
+ 				ForgetModal.style.display = "none"; 
  			}
-			EditTeamImg.onclick = function() { 
-				LoginModal.style.display = "block"; 
+			function RegisterModalOpen() { 
+ 				LoginModal.style.display = "none";
+ 				RegisterModal.style.display = "block";
+ 				ForgetModal.style.display = "none"; 
+				
+ 			}
+			function ForgetModalOpen() { 
+ 				LoginModal.style.display = "none";
+ 				RegisterModal.style.display = "none";
+ 				ForgetModal.style.display = "block"; 
+ 			}
+			
+			//LoginModal Check
+			var loginSubmit = document.getElementById("loginSubmit");
+			function cbreCAPTCH(){
+				loginSubmit.removeAttribute("disabled"); 
+			}
+			
+			
+			//RegisterModal Check
+			var regisPass1 = document.getElementById("regisPass1");
+			var regisPass2 = document.getElementById("regisPass2");
+			var checkPass = document.getElementById("checkPass");
+			var regisSubmit = document.getElementById("regisSubmit");
+			function checkPassspan() {
+				if(regisPass1.value != regisPass2.value){
+					checkPass.innerHTML="密碼不相符，請再次確認";
+					checkPass.style.color="red";
+				}else{
+					checkPass.innerHTML="";
+					regisSubmit.removeAttribute("disabled");
+				}
+			}
+			
+			//ForgetModal Check
+			var forgetPass1 = document.getElementById("forgetPass1");
+			var forgetPass2 = document.getElementById("forgetPass2");
+			var forgetPass = document.getElementById("forgetPass");
+			var forgetSubmit = document.getElementById("forgetSubmit");
+			function forgetPassspan() {
+				if(forgetPass1.value != forgetPass2.value){
+					forgetPass.innerHTML="密碼不相符，請再次確認";
+					forgetPass.style.color="red";
+				}else{
+					forgetPass.innerHTML="";
+					forgetSubmit.removeAttribute("disabled");
+				}
 			}
 		</script>
 <!-- Build Edit Team -->
 		
 <!-- Find Team -->
-		<div class="linkimg2 w3-card-4" id="findTeamImg">
+		<div class="linkimg2 w3-card-4" id="findTeamImg" onclick="findTeamModalOpen()">
 			<div class="linkimgtitle">
 				<span>Family || Fans&nbsp;</span>
 			</div>			
@@ -400,14 +402,14 @@
 			<section id="content">		
 				<span class="w3-button w3-display-topright w3-large" 
 		        onclick="document.getElementById('findTeamModal').style.display='none'">&times;</span>	
-				<form action="">
+				<form action="findurteam" method="post">
 					<h1>造訪支持球隊</h1>
 					<div>
-						<input type="text" placeholder="輸入球隊名稱..." required=""  
-						id="findTeamInput" onkeyup="findTeamFilter()"/>
+						<input type="text" placeholder="*輸入球隊名稱..." required=""  
+						id="findTeamInput" name="findTeamInput" onkeyup="findTeamFilter()"/>
 					</div>
 					<div>
-						<input type="submit" value="GO" />
+						<input type="submit" value="GO" id="findteamSubmit"/>
 					</div>
 					
 					<table class="w3-table-all " id="findTeamTable" 
@@ -426,13 +428,12 @@
 		
 		<script>
 			//open the findTeamModal
-			var findTeamImg = document.getElementById("findTeamImg");
 			var findTeamModal = document.getElementById("findTeamModal");
 			var findTeamInput = document.getElementById("findTeamInput");
 			var findTeamTable = document.getElementById("findTeamTable");
 			var tr = findTeamTable.getElementsByTagName("tr");
 			
-			findTeamImg.onclick = function() { 
+			function findTeamModalOpen() { 
 				findTeamModal.style.display = "block"; 
 			}
 			
@@ -442,6 +443,10 @@
 			    	findTeamModal.style.display = "none";
 			    }else if (event.target == LoginModal) {
 			    	LoginModal.style.display = "none";
+			    }else if (event.target == RegisterModal) {
+			    	RegisterModal.style.display = "none";
+			    }else if (event.target == ForgetModal) {
+			    	ForgetModal.style.display = "none";
 			    }
 			}
 			
@@ -469,7 +474,7 @@
 	        		if(xmlhttp.readyState == 4  && xmlhttp.status == 200){	        			
 	        			var xml = xmlhttp.responseXML;
 	        			for(var i = 0; i < xml.getElementsByTagName("team").length; i++){
-	        				var name = xml.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+	        				var teamname = xml.getElementsByTagName("teamname")[i].childNodes[0].nodeValue;
 	        				var tel = xml.getElementsByTagName("tel")[i].childNodes[0].nodeValue;
 	        				var fb = xml.getElementsByTagName("fb")[i].childNodes[0].nodeValue;
 	        				
@@ -478,7 +483,7 @@
 	                        var td1_new = tr_new.insertCell(1);
 	                        var td2_new = tr_new.insertCell(2);
 	                        
-	                        td0_new.innerHTML = name;
+	                        td0_new.innerHTML = teamname;
 	                        if(tel == "null" || tel == "NULL"){
 	                        	td1_new.innerHTML = "尚未建立";
 	                        }else{
@@ -515,7 +520,7 @@
 	        			
 	        			if(differ_L > 0 ){
 	        				for(var i = tr_L; i < xml_L; i++){
-		        				var name = xml.getElementsByTagName("name")[i].childNodes[0].nodeValue;
+		        				var teamname = xml.getElementsByTagName("teamname")[i].childNodes[0].nodeValue;
 		        				var tel = xml.getElementsByTagName("tel")[i].childNodes[0].nodeValue;
 		        				var fb = xml.getElementsByTagName("fb")[i].childNodes[0].nodeValue;
 		        				
@@ -524,7 +529,7 @@
 		                        var td1_new = tr_new.insertCell(1);
 		                        var td2_new = tr_new.insertCell(2);
 		                        
-		                        td0_new.innerHTML = name;
+		                        td0_new.innerHTML = teamname;
 		                        if(tel == "null" || tel == "NULL"){
 		                        	td1_new.innerHTML = "尚未建立";
 		                        }else{
@@ -542,8 +547,7 @@
 		                        }
 		                        td0_new.style.width = "45%";
 		                        td1_new.style.width = "45%";
-		                        td2_new.style.width = "90%";
-	        				}
+		                        td2_new.style.width = "90%";	        				}
 	        			}
 	        		}        		
 	        	};
@@ -558,12 +562,20 @@
 <!-- Middle -->
 	
 <!-- Footer -->
-	<div style=" text-align: center; background-color: #203562; color: white ">
-		<div class="w3-container" >
-			<h1>&nbsp;</h1> 
-			<p>Footer Text</p> 
-		</div>
-	</div>
+	<footer class="w3-container w3-padding-20 w3-center w3-xlarge" style="background-color:#203562; color:white;">
+	  <div class="w3-section">
+	  	<i class="w3-medium">Copyright By
+	  		<a style="color:lightgray" href="mailto:hitobaseball2017@gmail.com" class="w3-hover-text-white">Ed, Double, Weizi</a></i>
+	    <i class="fa fa-facebook-official w3-hover-white"></i>
+	  </div>
+	</footer>
+
+<!-- 	<div style=" text-align: center; background-color: #203562; color: white "> -->
+<!-- 		<div class="w3-container" > -->
+<!-- 			<h1>&nbsp;</h1>  -->
+<!-- 			<p>Footer Text</p>  -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 <!-- Footer -->
 
 

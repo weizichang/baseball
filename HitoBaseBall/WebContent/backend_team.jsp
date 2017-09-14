@@ -33,7 +33,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel='stylesheet' href='css/modal.css'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
     
@@ -124,7 +124,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 	  	</tr>
 	  </table>
 	  <br>
-	  <p><button class="w3-button w3-blue w3-round-large w3-small" type="submit">儲存變更</button></p>
+	  <p><button class="w3-button w3-blue w3-round-large w3-small w3-right" type="submit">儲存變更</button></p>
 	   
 	</form>
 </div>
@@ -205,7 +205,7 @@ TeamModel team =(TeamModel) request.getAttribute("team");
 </div>
 	<div class="w3-container">
 		<p class="w3-right">
-			<button class="w3-button w3-teal w3-round-larg" type="submit" style="margin-top: 15px;">確定</button>
+			<button class="w3-button w3-blue w3-round-large" type="submit" style="margin-top: 15px;">確定</button>
 		</p>
 	</div>
 </form>
