@@ -76,7 +76,8 @@
 	}
 	
 	th > span{
-	  font-size: 10px;
+	  font-size: 20px;
+	  font-style: italic;
 	}
 
     @media (max-width: 600px) {
@@ -165,8 +166,8 @@
   	<div class="w3-center">
 	   	<div class="w3-tag w3-round w3-blue w3-animate-top" style="padding:5px; width:360px;">
 		    <div class="w3-tag w3-round w3-blue w3-border w3-border-white" style="width:350px">
-		  		<h2><%= team.getName() %></h2>
-		  		<h4>STATS 數據統計</h4>
+		  		<h1><%= team.getName() %></h1>
+		  		<h3>STATS 數據統計</h3>
 		  	</div>
 	  	</div>
 	</div><br>
@@ -179,7 +180,7 @@
         <table class="table table-hover w3-card-4 " width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4" class="w3-blue">AVG <span>打擊率</span></th>
+                    <th colspan="4" class="w3-blue"><span>AVG</span> <span>打擊率</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -202,7 +203,7 @@
         <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4" class="w3-blue">H  <span>安打數</span></th>
+                    <th colspan="4" class="w3-blue"><span>H</span> <span>安打數</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -225,7 +226,7 @@
         <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4" class="w3-blue">RBI <span>打點</span></th>
+                    <th colspan="4" class="w3-blue"><span>RBI</span> <span>打點</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -251,7 +252,7 @@
         <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4" class="w3-blue">ERA <span>自責分率</span></th>
+                    <th colspan="4" class="w3-blue"><span>ERA</span> <span>自責分率</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -274,7 +275,7 @@
         <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4" class="w3-blue">SO <span>奪三振</span></th>
+                    <th colspan="4" class="w3-blue"><span>SO</span>  <span>奪三振</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -297,7 +298,7 @@
         <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4" class="w3-blue">WHIP <span>每局被上壘率</span></th>
+                    <th colspan="4" class="w3-blue"><span>WHIP</span>  <span>每局被上壘率</span></th>
                 </tr>
                  <%
                 	for(int i = 0; i < 3; i++){ %>

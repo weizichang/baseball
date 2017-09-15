@@ -3,6 +3,7 @@
     pageEncoding="UTF-8"%>
 <%
 	MyPlayerModel player = (MyPlayerModel)request.getAttribute("player");
+	Team team = (Team)request.getAttribute("team");
 		//out.print(player.getName());
 %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -187,7 +188,7 @@
 <!---->
 <div class="player_info">
   <div class="player_info_pic">
-  	<img width="120" height="160" class='player_img' onerror="myFunction(this)" src="./upload/img/363_1.png"></img>
+  	<img width="120" height="160" class='player_img' onerror="myFunction(this)" src="./upload/img/2_<%= player.getPlayerId() %>.jpg"></img>
   </div>
   <div class="player_info_row1">
     <div class="player_num">
