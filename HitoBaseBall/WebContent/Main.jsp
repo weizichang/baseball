@@ -27,7 +27,8 @@
     /* Add a gray background color and some padding to the footer */
     body {
 		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
-		background-color:#000000;
+		background: url("./imgs/4.jpg") center no-repeat;
+		background-size: cover;
 		}
     
     .carousel-inner img {
@@ -126,14 +127,14 @@
       <!-- Wrapper for slides -->
       <div id="img" class="carousel-inner" role="listbox">
         <div class="item active">
-          <img class="img-responsive" style="width:100%" src="imgs/slide01.jpg" alt="Image">
+          <img class="img-responsive" style="width:100%" src="imgs/<%= team.getTeamId()%>_slide01.jpg" alt="Image">
           <div class="carousel-caption">
           
           </div>      
         </div>
         
         <div class="item">
-          <img class="img-responsive" style="width:100%" src="imgs/slide02.jpg" alt="Image">
+          <img class="img-responsive" style="width:100%" src="imgs/<%= team.getTeamId() %>_slide02.jpg" alt="Image">
           <div class="carousel-caption">
             <!--<h3>Sell $</h3>-->
             <!--<p>Money Money.</p>-->
@@ -141,7 +142,7 @@
         </div>
         
         <div class="item">
-          <img class="img-responsive" style="width:100%" src="imgs/slide03.jpg" alt="Image">
+          <img class="img-responsive" style="width:100%" src="imgs/<%= team.getTeamId() %>_slide03.jpg" alt="Image">
           <div class="carousel-caption">
             <!--<h3>Sell $</h3>-->
             <!--<p>Money Money.</p>-->
@@ -159,11 +160,11 @@
         <span class="sr-only">Next</span>
       </a>
    </div>
-</div>
+</div><br>
 
   	<div class="w3-center">
-	   	<div class="w3-tag w3-round w3-blue w3-animate-top" style="padding:6px; width:300px;">
-		    <div class="w3-tag w3-round w3-blue w3-border w3-border-white" style="width:290px">
+	   	<div class="w3-tag w3-round w3-blue w3-animate-top" style="padding:5px; width:360px;">
+		    <div class="w3-tag w3-round w3-blue w3-border w3-border-white" style="width:350px">
 		  		<h2><%= team.getName() %></h2>
 		  		<h4>STATS 數據統計</h4>
 		  	</div>
@@ -178,7 +179,7 @@
         <table class="table table-hover w3-card-4 " width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4">AVG <span>打擊率</span></th>
+                    <th colspan="4" class="w3-blue">AVG <span>打擊率</span></th>
                 </tr>
                 <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -186,7 +187,7 @@
 	                        <td class='td_text' width="50"><%= i + 1 %></td>
 	                        <td class='td_text'>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getAvg().get(i).get("playerID") %>">
-	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getAvg().get(i).get("playerID") %>.png"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/<%= team.getTeamId() %>_<%= top3.getAvg().get(i).get("playerID") %>.jpg"></img>
 	                        	</a>
 	                        </td>
 	                        <td class='td_text' width="100"><%= top3.getAvg().get(i).get("name") %></td></td>
@@ -209,7 +210,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getHits().get(i).get("playerID") %>">
-	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getHits().get(i).get("playerID") %>.png"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/<%= team.getTeamId() %>_<%= top3.getHits().get(i).get("playerID") %>.jpg"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getHits().get(i).get("name") %></td></td>
@@ -232,7 +233,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getRbi().get(i).get("playerID") %>">
-	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getRbi().get(i).get("playerID") %>.png"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/<%= team.getTeamId() %>_<%= top3.getRbi().get(i).get("playerID") %>.jpg"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getRbi().get(i).get("name") %></td></td>
@@ -258,7 +259,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getEra().get(i).get("playerID") %>">
-	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getEra().get(i).get("playerID") %>.png"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/<%= team.getTeamId() %>_<%= top3.getEra().get(i).get("playerID") %>.jpg"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getEra().get(i).get("name") %></td></td>
@@ -281,7 +282,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getSo().get(i).get("playerID") %>">
-	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getSo().get(i).get("playerID") %>.png"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/<%= team.getTeamId() %>_<%= top3.getSo().get(i).get("playerID") %>.jpg"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getSo().get(i).get("name") %></td></td>
@@ -296,7 +297,7 @@
         <table class="table table-hover w3-card-4" width="100%"  border="0" cellspacing="0" cellpadding="0">
             <tbody>
                 <tr>
-                    <th colspan="4">WHIP <span>每局被上壘率</span></th>
+                    <th colspan="4" class="w3-blue">WHIP <span>每局被上壘率</span></th>
                 </tr>
                  <%
                 	for(int i = 0; i < 3; i++){ %>
@@ -304,7 +305,7 @@
 	                        <td width="50"><%= i + 1 %></td>
 	                        <td>
 	                        	<a href="PlayerDetail?playerID=<%= top3.getWhip().get(i).get("playerID") %>">
-	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/player_<%= top3.getWhip().get(i).get("playerID") %>.png"></img>
+	                        		<img class='player_img'  onerror="myFunction(this)" src="./upload/img/<%= team.getTeamId() %>_<%= top3.getWhip().get(i).get("playerID") %>.jpg"></img>
 	                        	</a>
 	                        </td>
 	                        <td width="100"><%= top3.getWhip().get(i).get("name") %></td></td>

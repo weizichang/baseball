@@ -19,8 +19,10 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Add a gray background color and some padding to the footer */
-    body {
+     body {
 		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+		background: url("./imgs/4.jpg") center no-repeat;
+		background-size: cover;
 	}
     
     footer {
@@ -181,9 +183,7 @@
 
 <!---->
 <div class="container">
-<h1>PLAYER 
-	<span>球員個人紀錄</span>
-</h1>
+
 <!---->
 <div class="player_info">
   <div class="player_info_pic">
@@ -199,9 +199,9 @@
     </div>
   </div>
   <div class="info_detail">
-    <table border="0" cellspacing="0" cellpadding="0" class="player_info_other test">
+    <table class=" w3-card-4 w3-table-all w3-hoverable w3-animate-left">
       <thead>
-      	<tr> 	
+      	<tr class="w3-black"> 	
       			<th>位置</th>
   				<th>投/打</th>
   				<th>身高</th>
@@ -222,10 +222,17 @@
   </div>
 </div>
 
+<!--標頭-->
+<div class="w3-tag w3-round w3-blue w3-animate-left" style="padding:5px; width:1140px; margin-bottom:10px;">
+    <div class="w3-tag w3-round w3-blue w3-border w3-border-white" style="width:1130px">
+  		<h5>球員個人紀錄</h5>
+	</div>
+</div>
+
 <!----> 
-	<table width="100%" cellspacing="0" cellpadding="0" border="1" class="std_tb mix_x test">
+	<table class=" w3-card-4 w3-table-all w3-hoverable">
 	  <thead>
-	    <tr>
+	    <tr class="w3-blue">
 	  		<th>YEAR</th>
 	  		<th>TEAM</th>
 	  		<th title="出賽數"><a href="#">G</a></th>
@@ -271,11 +278,10 @@
 	    </tr>
 	  </tbody>
 	</table>
-	<hr>
-	
-	<table width="100%" cellspacing="0" cellpadding="0" border="1" class="std_tb mix_x test">
+	<br>
+	<table class=" w3-card-4 w3-table-all w3-hoverable">
      <thead>
-	     	<tr>
+	     	<tr class="w3-blue">
 					<th title="雙殺打"><a href="#">GIDP</a></th>
 					<th title="犧牲短打"><a href="#">SAC</a></th>
 					<th title="犧牲飛球"><a href="#">SF</a></th>
@@ -308,13 +314,20 @@
 				<td>806.04</td>
 	    </tr>
   	</tbody>
-	</table>
+	</table><br>
 	<!---->
-	<h1>逐場成績表</h1>
+	
+<!--標頭-->
+	<div class="w3-tag w3-round w3-green w3-animate-left" style="padding:5px; width:1140px; margin-bottom:10px;">
+	    <div class="w3-tag w3-round w3-green w3-border w3-border-white" style="width:1130px">
+	  		<h5>逐場成績表</h5>
+		</div>
+	</div>
+	
 	<div class="table-responsive">
-		<table width="100%" cellspacing="0" cellpadding="0" border="1" class="std_tb mix_x test">
+		<table class=" w3-card-4 w3-table-all w3-hoverable">
 			<thead>
-			<tr>
+			<tr class="w3-green">
 				<th>DATE(GAME)</th>
 				<th>OPP</th>
 				<th title="打席"><a href="#">PA</a></th>

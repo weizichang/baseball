@@ -27,10 +27,10 @@ public class Main extends HttpServlet {
 		
 		HttpSession session = request.getSession();
 		
-		String teamID = (String)request.getParameter("teamID");
+		String teamID = (String)request.getParameter("teamId");
 		//int teamID;
 		if(teamID == null) {
-			teamID = (String)session.getAttribute("teamID");
+			teamID = (String)session.getAttribute("teamId");
 			if(teamID == null) {
 				teamID = "1";
 			}

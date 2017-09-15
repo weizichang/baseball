@@ -29,6 +29,9 @@
     /* Add a gray background color and some padding to the footer */
     body {
 		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+		background: url("./imgs/3.jpg") center no-repeat;
+		background-size: 100%;
+		background-repeat: repeat-y;
 	}
     
     footer {
@@ -102,18 +105,27 @@
     </div>
 </div>
 
-<!---->
+
 <div class="container">
-<!---->
-  <div id="photoBG">
-      <img src="imgs/slide04.jpg"></img>
-  </div>
-  <!--標頭-->
-  <h2>Player List  <span>球員點將錄</span></h2>
+
+<!--標頭-->
+<div class="w3-tag w3-round w3-blue w3-animate-left" style="padding:5px; width:1140px; margin-bottom:10px;">
+    <div class="w3-tag w3-round w3-blue w3-border w3-border-white" style="width:1130px">
+  		<h5>Player List 球員點將錄</h5>
+	</div>
+</div>
+
+
+<!--照片-->
+<div id="photoBG">
+	<img src="imgs/slide_a.jpg"></img>
+</div><br>
+  
+<!--table-->
   <div>
-      <table class="table table-hover" width="100%" border="0">
+      <table class=" w3-card-4 w3-table-all w3-hoverable">
         <tbody>
-          <tr bgcolor="Gray">
+          <tr class=" w3-blue">
               <th title="背號">#</th>
               <th title="投手">PITCHERS</th>
               <th title="位置">POSITION</th>
@@ -200,7 +212,7 @@
       </table>
   </div>
 <!---->
-</div>
+</div><br>
 
 <footer class="w3-container w3-padding-20 w3-center w3-xlarge" style="background-color:#203562; color:white;">
   <div class="w3-section">

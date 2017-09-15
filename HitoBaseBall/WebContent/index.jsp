@@ -9,7 +9,7 @@
 
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<meta name="keywords" content="棒球,紀錄,baseball,record" />
-	<meta name="description" content="歡迎來到「快速、簡易、即時的棒球球隊管理紀錄平台」" />
+	<meta name="description" content="歡迎來到「快速、簡易、即時的棒球隊整合管理平台」" />
 	<meta name="author" content="Ed, Double, Weizi">
 	
 	<title>HitoBaseball</title>
@@ -292,24 +292,24 @@
 			<section id="content">		
 				<span class="w3-button w3-display-topright w3-large" 
 		        onclick="document.getElementById('ForgetModal').style.display='none'">&times;</span>	
-				<form action="" method="post">
+				<form action="forgetting" method="post">
 					<h1>重設密碼</h1>
 					<div>
 						<input type="email" placeholder="*註冊信箱" required=""  
-						id="forgetAcc"/>
+						id="forgetAcc" name="forgetAcc"/>
 					</div>
 					<div>
 						<input type="password" placeholder="*登入密碼" required="" 
-						id="forgetPass1" />
+						id="forgetPass1" name="forgetPass1"/>
 					</div>
 					<div>
 						<input type="password" placeholder="*再次確認密碼" required="" 
-						id="forgetPass2" onkeyup="forgetPassspan()"/>
+						id="forgetPass2" name="forgetPass2" onkeyup="forgetPassspan()"/>
 					</div>
 					<strong><span id="forgetPass" style=" float: left; margin-left: 25px; "></span></strong>
 					<div>
-						<input type="text" placeholder="*信箱驗證碼" required=""  
-						id="verifycode" />
+						<input type="text" placeholder="*信箱驗證碼"   
+						id="forgetVerify" name="forgetVerify"/>
 					</div>
 					<div>
 						<input type="submit" value="重設"  id="forgetSubmit" disabled="disabled"/>
@@ -351,7 +351,6 @@
 			function cbreCAPTCH(){
 				loginSubmit.removeAttribute("disabled"); 
 			}
-			
 			
 			//RegisterModal Check
 			var regisPass1 = document.getElementById("regisPass1");
@@ -409,7 +408,7 @@
 						id="findTeamInput" name="findTeamInput" onkeyup="findTeamFilter()"/>
 					</div>
 					<div>
-						<input type="submit" value="GO" id="findteamSubmit"/>
+						<input type="submit" value="GO" id="findteamSubmit" style=" margin-left: calc((100% - 120px)/2); "/>
 					</div>
 					
 					<table class="w3-table-all " id="findTeamTable" 

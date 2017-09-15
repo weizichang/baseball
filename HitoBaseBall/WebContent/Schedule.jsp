@@ -29,9 +29,12 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <style>
     /* Hide the carousel text when the screen is less than 600 pixels wide */
-    body {
+     body {
 		font-family: Helvetica, Arial, "文泉驛正黑", "WenQuanYi Zen Hei", "儷黑 Pro", "LiHei Pro", Meiryo, "微軟正黑體", "Microsoft JhengHei", sans-serif;
+		background: url("./imgs/3.jpg") center no-repeat;
+		background-size: 100%;
 	}
+    
     
     @media (max-width: 920px) {
       .gap_l20 {
@@ -188,6 +191,8 @@
 	</div>
 </div>
 
+</body>
+
 <footer class="w3-container w3-padding-20 w3-center w3-xlarge w3-bottom" style="background-color:#203562; color:white;">
   <div class="w3-section">
   	<i class="w3-medium">Copyright By
@@ -196,5 +201,4 @@
   </div>
 </footer>
 
-</body>
 </html>

@@ -37,7 +37,7 @@ public class findTeam extends HttpServlet {
 			prop.setProperty("user", "root");
 			prop.setProperty("password", "root");
 			
-			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/hitobaseball", prop);
+			Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1/cpbl", prop);
 			//System.out.println("Connection OK!");
 
 			//3.SQL Statement
@@ -55,11 +55,11 @@ public class findTeam extends HttpServlet {
 				sb.append("<team>");
 
 				sb.append("<teamid>");
-				sb.append(rs.getString("teamid"));
+				sb.append(rs.getString("teamID"));
 				sb.append("</teamid>");				
 				
 				sb.append("<teamname>");
-				sb.append(rs.getString("teamname"));
+				sb.append(rs.getString("name"));
 				sb.append("</teamname>");
 
 				sb.append("<fb>");
@@ -67,16 +67,16 @@ public class findTeam extends HttpServlet {
 				sb.append("</fb>");
 				
 				sb.append("<email>");
-				sb.append(rs.getString("email"));
+				sb.append(rs.getString("mail"));
 				sb.append("</email>");
 				
 				sb.append("<tel>");
 				sb.append(rs.getString("tel"));
 				sb.append("</tel>");
 				
-				sb.append("<mid>");
-				sb.append(rs.getString("mid"));
-				sb.append("</mid>");
+//				sb.append("<mid>");
+//				sb.append(rs.getString("mid"));
+//				sb.append("</mid>");
 				
 				sb.append("</team>");
 			}

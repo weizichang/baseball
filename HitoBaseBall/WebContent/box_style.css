@@ -1,13 +1,13 @@
 /* Add a gray background color and some padding to the footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 25px;
-}
+/* footer { */
+/*   background-color: #f2f2f2; */
+/*   padding: 25px; */
+/* } */
 
-.navbar{
-  /*height:61px;*/
-  background-color:#203562;
-}
+/* .navbar{ */
+/*   height:61px; */
+/*   background-color:#203562; */
+/* } */
 
 h1 {
     font-family: "Times New Roman", Times, serif;
@@ -29,17 +29,17 @@ td, th{
 }
 
 .date_pick_bar {
-    background-color: #2e2e2e;
+    background-color: #00bcd4;
     height: 28px;
     line-height: 28px;
     text-align: center;
     color: #FFF;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 .date_pick {
     text-align: center;
-    background-color: #3b3a3a;
+    background-color: #00bcd4;
     background-image: -webkit-linear-gradient(bottom, #3b3a3a 96%, #2b2a2a);
     background-image: -moz-linear-gradient(bottom, #3b3a3a 96%, #2b2a2a);
     background-image: -o-linear-gradient(bottom, #3b3a3a 976, #2b2a2a);
@@ -120,7 +120,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
 }
 
 .vs_final {
-    color: #2ca8d2;
+    color: yellow;
 }
 
 .date_pick .arr_right {
@@ -134,7 +134,7 @@ body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, 
 
 .gray_tab_bar {
   text-align: center;
-  background-color: #3b3a3a;
+  background-color: #00bcd4;
   height: 40px;
   overflow: hidden;
   margin: 10px 0;
@@ -148,7 +148,7 @@ a.gray_tab_focus:hover {
   /*background: url(../images/gray_line.png) right repeat-y;*/
   height: 40px;
   line-height: 40px;
-  color: #d1d1d1;
+  color: #fff;
   padding: 0 18px 0 14px;
 }
 
@@ -157,7 +157,8 @@ a.gray_tab:hover, a.gray_tab_focus, a.gray_tab_focus:link, a.gray_tab_focus:visi
 }
 
 .blue_board {
-  background-color: #2d4792;
+  background-color: #00bcd4;
+/*   #2196F3 */
   height:auto;
   -webkit-box-shadow: inset 0 0 35px 8px rgba(0,0,0,.1);
   -moz-box-shadow: inset 0 0 35px 8px rgba(0,0,0,.1);
@@ -177,7 +178,7 @@ a.gray_tab:hover, a.gray_tab_focus, a.gray_tab_focus:link, a.gray_tab_focus:visi
 }
 
 .team_part .t_cell {
-  font-size: 13px;
+  font-size: 20px;
 }
 
 .t_cell {
@@ -201,7 +202,7 @@ a.gray_tab:hover, a.gray_tab_focus, a.gray_tab_focus:link, a.gray_tab_focus:visi
 /*  margin-top: 5px;*/
 /*}*/
 
-/*記分板*/
+/*閮�*/
 
 table {
   white-space: normal;
