@@ -28,6 +28,10 @@ td, th{
   text-align:center;
 }
 
+.broadcast{
+	background-color:white;
+}
+
 .date_pick_bar {
     background-color: #00bcd4;
     height: 28px;

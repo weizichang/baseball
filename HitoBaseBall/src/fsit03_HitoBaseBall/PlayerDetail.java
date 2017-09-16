@@ -50,6 +50,12 @@ public class PlayerDetail extends HttpServlet {
 			}
 			request.setAttribute("player", player);
 		}catch (Exception e) {System.out.println(e.toString());}
-		request.getRequestDispatcher("PlayerDetail.jsp").forward(request, response);
+		if(playerID.equals("51")) {
+			request.getRequestDispatcher("PlayerDetail_C.jsp").forward(request, response);
+		}else if(playerID.equals("41")) {
+			request.getRequestDispatcher("PlayerDetail_O.jsp").forward(request, response);
+		}else {
+			request.getRequestDispatcher("PlayerDetail.jsp").forward(request, response);
+		}
 	}
 }

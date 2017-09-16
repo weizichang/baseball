@@ -76,7 +76,7 @@
 		<li class="game" id="box_team_151" >
 			<a href="#" class=  "vs_box_focus" >
 				<div class="vs_team">
-					<img src="imgs/E02_logo_01.png" width="30" height="30" align="absmiddle" />
+					<img src="imgs/no.jpg" width="30" height="30" align="absmiddle" />
 				</div>
 				
 				<div class="vs_info">
@@ -87,7 +87,7 @@
 					</div>
 				</div>
 				<div class="vs_team">
-					<img src="imgs/L01_logo_01.png" width="30" height="30" align="absmiddle" />
+					<img src="imgs/freestyle.jpg" width="30" height="30" align="absmiddle" />
 				</div>
 			</a>
 		</li>
@@ -105,7 +105,7 @@
 <!--↓PLAY BY PLAY↓-->
 <div class="gray_tab_bar">
 	<a href="BoxScore?iid=<%= box.getBoard().getIid() %>" class="gray_tab gray_tab_focus">BOX</a>
-	<a href="PlayByPlay.html" class="gray_tab">PLAY BY PLAY</a>
+	<a href="PlayByPlay" class="gray_tab">PLAY BY PLAY</a>
 </div>
 <!--↑PLAY BY PLAY↑-->
 	
@@ -114,7 +114,7 @@
 	<div class="container">
 		
 		<div class="team_part">
-			<div class="m_cell"><img src="imgs/E02_logo_01.png" width="120" height="120" /></div>
+			<div class="m_cell"><img src="imgs/no.jpg" width="120" height="120" /></div>
 		</div>
 			
 		<div class="score_part">
@@ -195,7 +195,7 @@
 			</div>
 		</div>
 			<div class="team_part">
-				<div class="m_cell"><img src="imgs/L01_logo_01.png" width="120" height="120" /></div>
+				<div class="m_cell"><img src="imgs/freestyle.jpg" width="120" height="120" /></div>
 			</div>
 			<div class="clean"></div>
 	</div>
